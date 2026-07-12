@@ -1,0 +1,780 @@
+{
+  "layout": {
+    "skipToContent": "Przejdź do treści"
+  },
+  "header": {
+    "brand": "Vendoor Proof",
+    "primaryNavLabel": "Główna nawigacja",
+    "primaryCta": "Wczesny dostęp",
+    "nav": {
+      "howItWorks": "Jak to działa",
+      "whatItAutomates": "Co automatyzuje",
+      "roi": "ROI",
+      "pilot": "Pilot",
+      "faq": "FAQ"
+    },
+    "segment": {
+      "label": "Segment kampanii",
+      "propertyTeams": "Nieruchomości",
+      "contractors": "Wykonawcy"
+    },
+    "language": {
+      "label": "Język",
+      "en": "EN",
+      "pl": "PL"
+    },
+    "mobile": {
+      "open": "Otwórz menu",
+      "close": "Zamknij menu",
+      "title": "Nawigacja"
+    }
+  },
+  "landing": {
+    "workflowPreview": {
+      "ariaLabel": "Podgląd workflow produktu z kolejką dokumentów, statusami i zadaniami weryfikatora",
+      "workspace": "Workspace compliance",
+      "title": "Przegląd zgodności dostawców",
+      "liveBadge": "Automatyzacja aktywna",
+      "metrics": {
+        "expiringSoon": {
+          "value": "12",
+          "label": "dokumentów wkrótce wygasa"
+        },
+        "awaitingReview": {
+          "value": "8",
+          "label": "oczekuje na weryfikację"
+        },
+        "followUp": {
+          "value": "3",
+          "label": "dostawców wymaga follow-upu"
+        }
+      },
+      "queue": {
+        "title": "Priorytetowa kolejka dokumentów",
+        "columns": {
+          "vendor": "Dostawca",
+          "document": "Dokument",
+          "status": "Status",
+          "risk": "Ryzyko",
+          "owner": "Właściciel"
+        },
+        "rows": {
+          "skyline": {
+            "vendor": "Skyline Electrical",
+            "document": "Ubezpieczenie OC",
+            "status": "Wkrótce wygasa",
+            "risk": "7 dni",
+            "owner": "J. Wiśniewska"
+          },
+          "atlas": {
+            "vendor": "Atlas Construction",
+            "document": "COI OC",
+            "status": "W weryfikacji",
+            "risk": "Weryfikacja",
+            "owner": "A. Kowalska"
+          },
+          "oak": {
+            "vendor": "Oakline Security",
+            "document": "Ubezpieczenie pracownicze",
+            "status": "Wygasłe",
+            "risk": "Eskalacja",
+            "owner": "J. Patel"
+          }
+        }
+      },
+      "followUp": {
+        "title": "Automatyzacja follow-upów"
+      },
+      "review": {
+        "title": "Kolejka weryfikatora",
+        "task": "Potwierdź daty ubezpieczenia w COI Atlas Construction przed akceptacją.",
+        "escalation": "1 otwarta eskalacja"
+      },
+      "controlBadge": "Wymagana decyzja weryfikatora",
+      "statuses": {
+        "expiring": "Wygasa",
+        "requested": "Wysłana prośba",
+        "inReview": "W weryfikacji",
+        "verified": "Zweryfikowane"
+      },
+      "timeline": {
+        "ninetyDays": {
+          "time": "90 dni przed wygaśnięciem",
+          "event": "Prośba wysłana"
+        },
+        "sixtyDays": {
+          "time": "60 dni przed wygaśnięciem",
+          "event": "Follow-up zaplanowany"
+        },
+        "vendorUpload": {
+          "time": "Przesłanie przez dostawcę",
+          "event": "Przesłane do weryfikacji"
+        },
+        "reviewerDecision": {
+          "time": "Decyzja weryfikatora",
+          "event": "Zweryfikowane po weryfikacji przez człowieka"
+        }
+      },
+      "reviewNote": "Akceptacja jest decyzją weryfikatora, nie założeniem systemu.",
+      "pauseMessage": "Follow-upy zatrzymują się automatycznie po przesłaniu pliku.",
+      "verificationRule": "Przesłane albo otrzymane nie znaczy zweryfikowane."
+    },
+    "trustPrinciples": {
+      "approvedAutomation": {
+        "title": "Kontrolowana automatyzacja",
+        "copy": "Wiadomości mailowe trafiają do dostawców ściśle według harmonogramu i na bazie szablonów zatwierdzonych przez Twój zespół."
+      },
+      "noVendorAccounts": {
+        "title": "Dostęp bez logowania",
+        "copy": "Każda prośba zawiera bezpieczny i unikalny link, który pozwala dostawcy na szybkie przesłanie plików."
+      },
+      "humanReview": {
+        "title": "Ostateczna akceptacja w Twoich rękach",
+        "copy": "Przesłany plik zawsze trafia do weryfikacji. Żaden dokument nie zostanie zatwierdzony bez Twojej wiedzy."
+      }
+    },
+    "problem": {
+      "eyebrow": "Automatyzacja kontroli dokumentów",
+      "title": "Nie pozwól, aby jakikolwiek ważny dokument wygasł bez Twojej wiedzy.",
+      "lead": "Nasz system nieustannie monitoruje terminy, wysyła odpowiednie przypomnienia i kieruje zebrane pliki do właściwych osób. Twój zespół zidentyfikuje każde ryzyko, zanim przerodzi się ono w realny problem.",
+      "microcopy": "Nie odbieramy Ci kontroli. Po prostu automatyzujemy całą powtarzalną pracę.",
+      "photo": {
+        "alt": "Specjalistka weryfikująca dokumentację dostawcy",
+        "monitoringActive": "Aktywny monitoring",
+        "documentChecked": "Dokument zweryfikowany",
+        "nextCheck": "Kolejna kontrola za 30 dni"
+      },
+      "mockup": {
+        "workspace": "Przestrzeń robocza compliance",
+        "title": "Przegląd zgodności dostawców",
+        "liveBadge": "Automatyzacja aktywna",
+        "metrics": {
+          "expiringSoon": {
+            "value": "12",
+            "label": "dokumentów wkrótce wygaśnie"
+          },
+          "awaitingReview": {
+            "value": "8",
+            "label": "oczekuje na weryfikację"
+          },
+          "followUp": {
+            "value": "3",
+            "label": "dostawców wymaga przypomnienia"
+          }
+        },
+        "columns": {
+          "vendor": "Dostawca",
+          "document": "Dokument",
+          "status": "Status",
+          "expiry": "Wygaśnięcie",
+          "owner": "Właściciel"
+        },
+        "rows": {
+          "atlas": {
+            "vendor": "Atlas Construction",
+            "document": "General Liability COI",
+            "status": "Oczekuje na weryfikację",
+            "expiry": "18 dni",
+            "owner": "Anna Kowalska"
+          },
+          "northline": {
+            "vendor": "Northline Facilities",
+            "document": "Workers Compensation",
+            "status": "Ważny",
+            "expiry": "96 dni",
+            "owner": "Michał Nowak"
+          },
+          "skyline": {
+            "vendor": "Skyline Electrical",
+            "document": "Liability Insurance",
+            "status": "Wkrótce wygaśnie",
+            "expiry": "7 dni",
+            "owner": "Julia Wiśniewska"
+          },
+          "urban": {
+            "vendor": "Urban Build Group",
+            "document": "Safety Certificate",
+            "status": "Oczekuje na plik",
+            "expiry": "-",
+            "owner": "Tomasz Zielinski"
+          }
+        }
+      },
+      "workflow": {
+        "title": "Automatyzacja aktywna",
+        "items": {
+          "fourteenDays": {
+            "time": "14 dni przed wygaśnięciem",
+            "event": "Przypomnienie wysłane do dostawcy"
+          },
+          "sevenDays": {
+            "time": "7 dni przed wygaśnięciem",
+            "event": "Zaplanowano przypomnienie"
+          },
+          "documentReceived": {
+            "time": "Dokument otrzymany",
+            "event": "Przypisano do Anny Kowalskiej w celu weryfikacji"
+          }
+        }
+      },
+      "proof": {
+        "deadlines": {
+          "title": "Koniec z terminami w arkuszach",
+          "copy": "System pilnuje każdego wymaganego dokumentu i pokazuje rekordy zbliżające się do daty wygaśnięcia."
+        },
+        "routing": {
+          "title": "Przypomnienia działają według zatwierdzonego harmonogramu",
+          "copy": "Dostawca otrzymuje właściwe przypomnienie w odpowiednim momencie."
+        },
+        "review": {
+          "title": "Przesłane pliki trafiają do weryfikacji",
+          "copy": "Otrzymany plik jest kierowany do osoby weryfikującej go przed ostatecznym zatwierdzeniem."
+        }
+      }
+    },
+    "automation": {
+      "title": "Rutynowa praca wykonuje się automatycznie. Twój zespół podejmuje kluczowe decyzje.",
+      "lead": "Każda automatyzacja odpowiada za konkretny krok operacyjny. Weryfikacja i ostateczna akceptacja pozostają w rękach Twojego zespołu.",
+      "items": {
+        "detect": {
+          "step": "01",
+          "title": "Wykrywaj",
+          "copy": "Oznaczaj brakujące, wygasające, przeterminowane i pozostawione bez odpowiedzi wymagania dokumentowe.",
+          "preview": {
+            "missing": "Brakujący",
+            "expiring": "Wygasający",
+            "overdue": "Przeterminowany",
+            "unanswered": "Brak odpowiedzi"
+          }
+        },
+        "followUp": {
+          "step": "02",
+          "title": "Przypominaj",
+          "copy": "Wysyłaj zatwierdzone prośby oraz przypomnienia wraz z bezpiecznym linkiem do przesłania plików.",
+          "preview": {
+            "label": "Podgląd wiadomości e-mail",
+            "template": "Zatwierdzony szablon",
+            "subject": "Prośba o dokument ubezpieczeniowy",
+            "uploadLink": "Unikalny link do przesłania plików"
+          }
+        },
+        "escalate": {
+          "step": "03",
+          "title": "Eskaluj",
+          "copy": "Zatrzymuj sekwencję po otrzymaniu pliku i zgłaszaj tylko przeterminowane lub ryzykowne wyjątki.",
+          "preview": {
+            "label": "Alert właściciela",
+            "title": "Przeterminowany wyjątek",
+            "message": "Gotowy do podjęcia akcji",
+            "action": "Przejrzyj"
+          }
+        }
+      }
+    },
+    "workflow": {
+      "eyebrow": "Zautomatyzowany obieg dokumentów",
+      "title": "Od wykrycia braku po w pełni zweryfikowany dokument",
+      "lead": "Nasz system monitoruje zbliżające się terminy, samodzielnie kontaktuje się z dostawcami oraz zarządza plikami na każdym etapie. Twój zespół wkracza do akcji dopiero w momencie, w którym niezbędna jest ostateczna decyzja.",
+      "controlNote": "Ostateczna akceptacja zawsze należy do człowieka. Każdy przesłany plik wymaga weryfikacji i nie zostanie zatwierdzony automatycznie.",
+      "diagramAlt": "Sześcioetapowy obieg dokumentu: wykrycie, prośba, przypomnienia, odbiór, weryfikacja przez człowieka i eskalacja, zakończony powrotem do monitoringu.",
+      "diagramAriaLabel": "Sześć etapów automatycznego obiegu dokumentu",
+      "continuousMonitoring": "Nieprzerwany monitoring po zatwierdzeniu plików",
+      "tabsLabel": "Kroki workflow",
+      "nextLabel": "Co dzieje się dalej?",
+      "diagram": {
+        "ariaLabel": "Diagram workflow dokumentu od wykrycia problemu do zweryfikowanego rekordu",
+        "automaticLabel": "Automatycznie",
+        "humanLabel": "Decyzja człowieka",
+        "exceptionLabel": "Ścieżka warunkowa",
+        "exceptionTrigger": "Gdy dostawca nie odpowiada lub termin jest zagrożony.",
+        "returnLabel": "Powrót do monitorowania",
+        "verified": {
+          "number": "06",
+          "label": "Zweryfikowany rekord",
+          "status": "Proces zakończony",
+          "copy": "Po akceptacji dokument i decyzja zostają zapisane w kompletnej historii rekordu."
+        }
+      },
+      "steps": {
+        "detect": {
+          "number": "01",
+          "label": "Wykrywaj",
+          "title": "Dokumentu brakuje albo zbliża się jego wygaśnięcie.",
+          "copy": "System porównuje aktywne wymagania z datami wygaśnięcia, brakującymi plikami, wiadomościami bez odpowiedzi oraz przeterminowanymi rekordami.",
+          "summary": "System monitoruje terminy ważności, braki dokumentów i brak odpowiedzi dostawcy.",
+          "status": "Wykryto wygaśnięcie",
+          "next": "Zatwierdzona prośba jest przygotowana dla dostawcy.",
+          "mockupTitle": "Monitor wymagań",
+          "mockupDetail": "Certyfikat wygasa za 30 dni.",
+          "preview": {
+            "monitor": "Monitor wymagań",
+            "activeRules": "Reguły skanują każdego aktywnego dostawcę",
+            "missing": "Brakujące dokumenty",
+            "expiring": "Wygasa wkrótce",
+            "unanswered": "Brak odpowiedzi dostawcy",
+            "alert": "Certyfikat wygasa za 30 dni"
+          }
+        },
+        "request": {
+          "number": "02",
+          "label": "Prośba",
+          "title": "System wysyła zatwierdzoną prośbę i bezpieczny link do przesłania.",
+          "copy": "Dostawca otrzymuje dokładnie taki szablon, jaki zatwierdził zespół, wraz z bezpiecznym linkiem do wymaganego dokumentu.",
+          "summary": "System automatycznie wysyła zatwierdzoną prośbę o aktualny dokument.",
+          "status": "Wysłano prośbę",
+          "next": "Rekord czeka na odpowiedź albo kolejne zatwierdzone przypomnienie.",
+          "mockupTitle": "Prośba do dostawcy",
+          "mockupDetail": "Bezpieczny link do przesłania pliku dołączony do prośby o certyfikat.",
+          "preview": {
+            "template": "Zatwierdzony szablon prośby",
+            "approved": "Wiadomość zatwierdzona przez zespół",
+            "subject": "Prośba o odnowienie certyfikatu",
+            "link": "Bezpieczny link do przesłania pliku"
+          }
+        },
+        "followUp": {
+          "number": "03",
+          "label": "Przypomnienie",
+          "title": "System wysyła przypomnienia w ustawionym harmonogramie, jeśli dostawca milczy.",
+          "copy": "Używaj zdefiniowanych dni jako konfigurowalnych reguł, a nie obowiązkowego schematu.",
+          "summary": "Zaplanowane przypomnienia są wysyłane do momentu otrzymania pliku.",
+          "status": "Harmonogram aktywny",
+          "next": "Przesłanie pliku przez dostawcę automatycznie zatrzymuje sekwencję przypomnień.",
+          "mockupTitle": "Ustawienia harmonogramu",
+          "mockupDetail": "14, 7 i 0 dni przed wygaśnięciem.",
+          "preview": {
+            "timeline": "Oś czasu przypomnień",
+            "cadence": "Zatwierdzony harmonogram",
+            "fourteen": "14 dni",
+            "seven": "7 dni",
+            "today": "Dziś",
+            "sent": "Wysłane",
+            "scheduled": "Zaplanowane",
+            "waiting": "Oczekiwanie"
+          }
+        },
+        "upload": {
+          "number": "04",
+          "label": "Odbierz",
+          "title": "Przesłanie zatrzymuje harmonogram i przenosi plik do weryfikacji.",
+          "copy": "Przesłanie zmienia stan rekordu, ale nie oznacza automatycznej weryfikacji dokumentu.",
+          "summary": "Dostawca przesyła dokument przez bezpieczny link, bez konieczności logowania.",
+          "status": "Otrzymano do weryfikacji",
+          "next": "Weryfikator sprawdza plik zanim pojawi się status zweryfikowany.",
+          "mockupTitle": "Status przesłania",
+          "mockupDetail": "Otrzymano do weryfikacji.",
+          "preview": {
+            "inbox": "Skrzynka odbiorcza",
+            "received": "Plik dostawcy odebrany",
+            "file": "Plik odebrany",
+            "state": "Otrzymano do weryfikacji",
+            "confirmation": "Plik odebrany. Przypomnienia zatrzymują się automatycznie."
+          }
+        },
+        "review": {
+          "number": "05",
+          "label": "Zweryfikuj",
+          "title": "Weryfikator sprawdza, prosi o zmiany albo zapisuje decyzję.",
+          "copy": "Weryfikacja przez człowieka pozostaje punktem kontroli przed akceptacją pliku lub odesłaniem go do poprawy.",
+          "summary": "Otrzymany plik trafia do kolejki ręcznej weryfikacji i nie jest automatycznie zatwierdzany.",
+          "status": "Wymagana weryfikacja",
+          "next": "Decyzje zaakceptowane, odrzucone i z prośbą o zmianę są zapisane w rekordzie.",
+          "mockupTitle": "Kolejka weryfikatora",
+          "mockupDetail": "Plik przesłany. Wymagana weryfikacja.",
+          "preview": {
+            "queue": "Kolejka weryfikatora",
+            "reviewer": "Przypisane do pracownika",
+            "coverage": "Widoczne limity",
+            "dates": "Sprawdzone daty obowiązywania",
+            "approval": "Otrzymanie pliku nie oznacza jego akceptacji."
+          }
+        },
+        "escalation": {
+          "number": "06",
+          "label": "Eskaluj",
+          "title": "Wyjątki eskalują, kiedy termin albo właściciel wymaga uwagi.",
+          "copy": "System pokazuje przeterminowane rekordy o wysokim ryzyku lub te bez odpowiedzi, aby właściwa osoba mogła podjąć działanie.",
+          "summary": "System powiadamia właściciela tylko o przeterminowanych, ryzykownych lub nierozwiązanych wyjątkach.",
+          "status": "Właściciel powiadomiony",
+          "next": "Wyjątek wraca do widoku priorytetów, dopóki nie zostanie rozwiązany.",
+          "mockupTitle": "Reguła eskalacji",
+          "mockupDetail": "Termin zagrożony. Właściciel oraz menedżer zostali powiadomieni.",
+          "preview": {
+            "rule": "Reguła eskalacji",
+            "overdue": "Przeterminowany wyjątek",
+            "reasonLabel": "Powód",
+            "reason": "Brak odpowiedzi na przypomnienia",
+            "ownerLabel": "Właściciel",
+            "owner": "Przypisane do właściciela procesu",
+            "note": "Termin zagrożony. Właściciel oraz menedżer zostali powiadomieni."
+          }
+        }
+      }
+    },
+    "productPreview": {
+      "eyebrow": "Zautomatyzowane przypomnienia o dokumentach",
+      "title": "Utrzymaj płynny obieg dokumentów od dostawców bez konieczności śledzenia każdego maila.",
+      "lead": "Wysyłaj prośby, zbieraj pliki, weryfikuj zgłoszenia oraz eskaluj tylko wyjątki. Każdy dokument posiada przypisanego właściciela, jasny termin oraz pełną historię zmian.",
+      "principle": "Twój zespół podejmuje kluczowe decyzje. System zajmuje się całą komunikacją.",
+      "imageAlt": "Obieg dokumentów dostawcy od prośby i przesłania pliku do weryfikacji i eskalacji.",
+      "workflowAriaLabel": "Obieg dokumentów dostawcy",
+      "benefits": {
+        "automation": {
+          "title": "Prośby i przypomnienia działają w tle",
+          "copy": "Dostawcy otrzymują odpowiednią wiadomość oraz link do wgrania plików dokładnie wtedy, kiedy jest to potrzebne."
+        },
+        "uploads": {
+          "title": "Przesłanie pliku zatrzymuje powiadomienia",
+          "copy": "Gdy tylko dokument zostanie wgrany, przypomnienia są wstrzymywane, a plik trafia do weryfikacji."
+        },
+        "exceptions": {
+          "title": "Tylko sytuacje awaryjne trafiają do Twojego zespołu",
+          "copy": "Brakujące, odrzucone lub przeterminowane dokumenty pozostają widoczne do momentu ich ostatecznego rozwiązania."
+        }
+      },
+      "steps": {
+        "request": {
+          "number": "01",
+          "label": "Prośba",
+          "copy": "Wyślij odpowiednie zapytanie"
+        },
+        "collect": {
+          "number": "02",
+          "label": "Odbiór",
+          "copy": "Dostawca bezpiecznie przesyła plik"
+        },
+        "verify": {
+          "number": "03",
+          "label": "Weryfikacja",
+          "copy": "Przejrzyj przesłane zgłoszenie"
+        },
+        "escalate": {
+          "number": "04",
+          "label": "Eskalacja",
+          "copy": "Przekaż nierozwiązany problem dalej"
+        }
+      }
+    },
+    "benefits": {
+      "title": "Zamień kruchy proces w arkuszu na przewidywalną, rutynową operację.",
+      "items": {
+        "cadence": {
+          "title": "Automatyczny harmonogram",
+          "copy": "Uruchamiaj follow-upy w interwałach zatwierdzonych przez zespół."
+        },
+        "exceptionFirst": {
+          "title": "Widok wyjątków",
+          "copy": "Skup się na rekordach brakujących, wygasających, eskalowanych i oczekujących na weryfikację."
+        },
+        "uploadLinks": {
+          "title": "Linki do przesyłania bez logowania",
+          "copy": "Pozwól dostawcom przesłać wymagany plik w mniej niż minutę."
+        },
+        "humanReview": {
+          "title": "Weryfikacja tam, gdzie ma znaczenie",
+          "copy": "Przesłanie zatrzymuje ściganie; zespół nadal podejmuje ostateczną decyzję."
+        },
+        "escalationRules": {
+          "title": "Reguły eskalacji",
+          "copy": "Powiadom właściciela i menedżera, gdy termin jest zagrożony."
+        },
+        "auditHistory": {
+          "title": "Historia gotowa do audytu",
+          "copy": "Trzymaj każdą prośbę, plik, decyzję i eskalację w jednej osi czasu."
+        }
+      }
+    },
+    "roiCalculator": {
+      "title": "Oszacuj miesięczny czas ręcznych follow-upów",
+      "description": "Użyj własnej liczby dostawców i założeń dotyczących follow-upów. Kalkulator działa lokalnie w przeglądarce.",
+      "resultLabel": "Szacowany czas ręcznych follow-upów",
+      "hoursResult": "{hours} godzin na cykl",
+      "costResult": "Szacowany koszt wewnętrzny: {cost} na cykl",
+      "estimateNote": "To szacunek oparty na Twoich danych. Nie obejmuje kosztu opóźnień, ryzyka audytu ani weryfikacji dokumentów.",
+      "fields": {
+        "activeVendors": {
+          "label": "Aktywni dostawcy",
+          "unit": "dostawców"
+        },
+        "documentsPerVendor": {
+          "label": "Dokumenty na dostawcę",
+          "unit": "dok."
+        },
+        "followUpsPerDocument": {
+          "label": "Średnia liczba follow-upów na dokument",
+          "unit": "razy"
+        },
+        "minutesPerFollowUp": {
+          "label": "Minuty na ręczny follow-up",
+          "unit": "min"
+        },
+        "hourlyCost": {
+          "label": "Opcjonalny koszt godziny",
+          "unit": "USD"
+        }
+      }
+    },
+    "betaOffer": {
+      "title": "Wczesny dostęp dla zespołów od dokumentów dostawców",
+      "lead": "Dla zespołów operacyjnych i zarządzających nieruchomościami, które nadal śledzą dokumenty dostawców w arkuszach, folderach i e-mailach. Dołącz do listy, aby przetestować prosty workflow dla terminów, follow-upów, przesyłania plików i historii weryfikacji.",
+      "scope": {
+        "title": "Korzyści dla Twojego zespołu",
+        "items": {
+          "statusView": "Jedno spójne miejsce do monitorowania dokumentów brakujących, wygasających oraz tych oczekujących na weryfikację.",
+          "manualFollowUp": "Znacznie mniej ręcznego upominania się o pliki dzięki automatycznym przypomnieniom oraz jasnym ścieżkom eskalacji.",
+          "vendorUpload": "Bezpieczne i proste linki, które pozwalają dostawcom na błyskawiczne wgranie plików bez zakładania konta.",
+          "auditTrail": "Pełna historia komunikacji, przesłanych plików oraz decyzji zespołu dostępna zawsze w jednym widoku.",
+          "workspace": "Jedna przestrzeń robocza",
+          "workflow": "Jeden realny workflow dokumentu",
+          "csvImport": "Wsparcie importu CSV",
+          "templates": "Zatwierdzone szablony e-mail",
+          "weeklyReview": "Cotygodniowy przegląd wyjątków"
+        }
+      },
+      "requirements": {
+        "title": "Czego potrzebujemy od Ciebie",
+        "items": {
+          "tracker": "Obecny tracker albo przykładowy plik CSV.",
+          "vendors": "10–30 reprezentatywnych dostawców.",
+          "owner": "Jeden właściciel decyzji eskalacyjnych.",
+          "approval": "Akceptacja szablonów wiadomości i harmonogramu."
+        }
+      },
+      "cta": {
+        "title": "Zrezygnuj z ręcznego weryfikowania arkuszy kalkulacyjnych",
+        "copy": "Skup się na tym, co naprawdę wymaga Twojej uwagi. Pozwól systemowi automatycznie wysyłać rutynowe przypomnienia zgodnie z ustalonymi zasadami, a ostateczne decyzje pozostaw swojemu zespołowi.",
+        "primary": "Dołącz do wczesnego dostępu",
+        "secondary": "Umów rozmowę zapoznawczą",
+        "microcopy": "Wczesny dostęp kierujemy do zespołów, które posiadają ustrukturyzowany proces i są gotowe przetestować nasze rozwiązanie na realnych przypadkach użycia."
+      },
+      "pricingNote": "Cena pilota founderskiego zaczyna się od 99 USD/mies. po potwierdzeniu dopasowania."
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Najczęstsze pytania przed startem",
+      "lead": "Konkretne odpowiedzi o zakresie automatyzacji, dostępie dostawców i starcie pilota.",
+      "topicCount": "{count} omówionych tematów",
+      "contactPrompt": "Chcesz omówić swój proces?",
+      "contactLink": "Zgłoś się do pilota automatyzacji",
+      "items": {
+        "emails": {
+          "question": "Czy system sam przypomina dostawcom?",
+          "answer": "Tak, ale tylko według zasad i szablonów zatwierdzonych przez Twój zespół. Sekwencję można zatrzymać albo wymagać ręcznej akceptacji przed wysyłką."
+        },
+        "approval": {
+          "question": "Kto ostatecznie akceptuje dokument?",
+          "answer": "Twój zespół. System pomaga zebrać plik, skierować go do właściwej osoby i zapisać historię, ale nie akceptuje dokumentów automatycznie."
+        },
+        "vendorAccount": {
+          "question": "Czy dostawca musi zakładać konto?",
+          "answer": "Nie. Prośba może zawierać bezpieczny link do przesłania konkretnego dokumentu, więc dostawca może odesłać plik bez logowania."
+        },
+        "noResponse": {
+          "question": "Co jeśli dostawca dalej milczy?",
+          "answer": "System wysyła kolejne przypomnienia według ustalonego harmonogramu. Jeśli nadal nie ma odpowiedzi, rekord może trafić jako wyjątek do właściciela albo menedżera."
+        },
+        "otherDocuments": {
+          "question": "Czy to działa tylko dla COI?",
+          "answer": "Nie. Możesz śledzić też licencje, W-9, dokumenty BHP, pakiety podwykonawców i inne cykliczne wymagania wobec dostawców."
+        },
+        "startSmall": {
+          "question": "Czy musimy od razu wdrażać całość?",
+          "answer": "Nie. Pilot można zacząć od jednego realnego workflow, na przykład dla jednego budynku albo projektu, i dopiero potem zdecydować, czy rozszerzać proces."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Przestań traktować obieg dokumentów jak ciągły test pamięci.",
+      "copy": "Uruchom zautomatyzowany proces dla swojej obecnej bazy dostawców i przekonaj się, jak wiele czasu Twój zespół zaoszczędzi na codziennej komunikacji.",
+      "primary": "Dołącz do wczesnego dostępu"
+    },
+    "pilotForm": {
+      "title": "Dołącz do wczesnego dostępu",
+      "lead": "Podaj najważniejsze informacje, żebyśmy mogli potwierdzić dopasowanie i odezwać się z konkretnym kolejnym krokiem.",
+      "submit": "Dołącz do wczesnego dostępu",
+      "privacyPrefix": "Przesyłając formularz, wyrażasz zgodę na kontakt w sprawie wczesnego dostępu. Sprawdź naszą",
+      "privacyLink": "Politykę prywatności",
+      "fields": {
+        "workEmail": {
+          "label": "Służbowy adres email",
+          "placeholder": "imię@firma.com"
+        },
+        "firstName": {
+          "label": "Imię",
+          "placeholder": "Alex"
+        },
+        "company": {
+          "label": "Nazwa firmy",
+          "placeholder": "Northline Property Group"
+        },
+        "role": {
+          "label": "Rola",
+          "placeholder": "Operations manager"
+        },
+        "companyType": {
+          "label": "Typ firmy"
+        },
+        "activeVendors": {
+          "label": "Aktywni dostawcy"
+        },
+        "currentProcess": {
+          "label": "Obecny proces"
+        },
+        "monthlyFollowUps": {
+          "label": "Miesięczne follow-upy"
+        },
+        "biggestPain": {
+          "label": "Największy problem, opcjonalnie",
+          "placeholder": "Która część follow-upów tworzy najwięcej ryzyka albo ręcznej pracy?"
+        },
+        "privacyConsent": {
+          "label": "Wyrażam zgodę na kontakt w sprawie wczesnego dostępu oraz rozumiem, że przesłanie formularza nie oznacza ostatecznej akceptacji."
+        },
+        "honeypot": {
+          "label": "Zostaw to pole puste"
+        }
+      },
+      "options": {
+        "companyType": {
+          "Property management": "Property management",
+          "General contractor": "General contractor",
+          "Facilities": "Facilities",
+          "Other": "Inne"
+        },
+        "activeVendors": {
+          "1-25": "1-25",
+          "26-100": "26-100",
+          "101-250": "101-250",
+          "250+": "250+"
+        },
+        "currentProcess": {
+          "Spreadsheet": "Arkusz",
+          "Shared drive": "Dysk współdzielony",
+          "Existing software": "Istniejące oprogramowanie",
+          "Other": "Inne"
+        },
+        "monthlyFollowUps": {
+          "1-10": "1-10",
+          "11-25": "11-25",
+          "26-50": "26-50",
+          "50+": "50+",
+          "Not sure": "Nie wiem"
+        }
+      },
+      "errors": {
+        "required": "To pole jest wymagane.",
+        "email": "Wpisz poprawny służbowy e-mail.",
+        "min2": "Wpisz co najmniej 2 znaki.",
+        "max80": "Zmieść się w 80 znakach.",
+        "max100": "Zmieść się w 100 znakach.",
+        "max120": "Zmieść się w 120 znakach.",
+        "max800": "Zmieść się w 800 znakach.",
+        "consent": "Zgoda jest wymagana, aby wysłać formularz.",
+        "submit": "Nie udało się wysłać zgłoszenia. Spróbuj ponownie.",
+        "network": "Nie udało się połączyć z serwerem. Sprawdź połączenie i spróbuj ponownie.",
+        "invalid": "Popraw oznaczone pola."
+      },
+      "success": {
+        "eyebrow": "Zgłoszenie odebrane",
+        "title": "Dziękujemy — mamy Twoje zgłoszenie do pilota.",
+        "copy": "Przejrzymy informacje o workflow i odezwiemy się e-mailem. Możesz też pomóc nam skalibrować cennik jedną opcjonalną odpowiedzią poniżej.",
+        "calendarCta": "Umów 20-minutową rozmowę o workflow",
+        "productCta": "Zobacz pierwszy workflow",
+        "budget": {
+          "title": "Jaki miesięczny budżet byłby realistyczny dla takiego workflow?",
+          "copy": "Opcjonalne pytanie badawcze. Odpowiedź pomaga nam zrozumieć dopasowanie; to nie jest ostateczna cena ani oferta.",
+          "note": "To nie wpływa na status Twojego zgłoszenia do pilota.",
+          "options": {
+            "under100": "Poniżej 100 USD / mies.",
+            "100to249": "100–249 USD / mies.",
+            "250to499": "250–499 USD / mies.",
+            "500to999": "500–999 USD / mies.",
+            "1000plus": "1 000+ USD / mies."
+          }
+        }
+      }
+    }
+  },
+  "campaigns": {
+    "property-management": {
+      "metaTitle": "Automatyzuj follow-upy dokumentów dostawców",
+      "metaDescription": "Workflow dokumentów dostawców dla zespołów zarządzających nieruchomościami, który automatyzuje zatwierdzone follow-upy i zostawia ostateczną weryfikację zespołowi.",
+      "hero": {
+        "eyebrow": "Automatyzacja przypomnień o dokumentach",
+        "title": "Śledź wygasające dokumenty dostawców bez konieczności ręcznego wysyłania przypomnień.",
+        "lead": "Zapisz swoją firmę na listę wczesnego dostępu. Poinformujemy Cię, gdy zaprosimy kolejne zespoły zarządzające nieruchomościami. Pokażemy Ci, jak zautomatyzować przypomnienia, odnowienia oraz weryfikację dokumentów w jednym spójnym procesie.",
+        "context": "Dla małych zespołów zarządzających nieruchomościami, które nadal ogarniają compliance dostawców w arkuszach, skrzynkach odbiorczych i przypomnieniach na ostatnią chwilę.",
+        "primaryCta": "Dołącz do wczesnego dostępu",
+        "secondaryCta": "Zobacz jak to działa",
+        "microcopy": "Bez logowania dla dostawców. Zespół zachowuje ostateczną kontrolę weryfikacji.",
+        "trustLine": "Pełna kontrola nad wysyłanymi wiadomościami · Szybkie przesyłanie plików bez logowania · Ostateczna akceptacja zawsze należy do Ciebie",
+        "scrollCta": "Przewiń dalej"
+      },
+      "workflowPreview": {
+        "vendor": "Northline HVAC",
+        "requirement": "Wymaganie: General Liability COI"
+      }
+    },
+    "contractors": {
+      "metaTitle": "Zapobiegaj opóźnieniom przez wygasłe dokumenty",
+      "metaDescription": "Lekki workflow dokumentów dostawców dla wykonawców, który utrzymuje COI, licencje i dokumenty podwykonawców w ruchu, zanim zablokują prace.",
+      "hero": {
+        "eyebrow": "Automatyzacja follow-upów dokumentów dostawców",
+        "title": "Pilnuj dokumentów dostawców, zanim wygasłe papiery opóźnią prace.",
+        "lead": "Zgłoś firmę do listy wczesnego dostępu. Damy znać, gdy będziemy wpuszczać kolejne zespoły wykonawców, i pokażemy, jak śledzić odnowienia, przypomnienia i follow-upy bez kolejnego arkusza.",
+        "context": "Lekki workflow dla wykonawców, którzy muszą widzieć, czego brakuje, co jest w weryfikacji i co może zablokować mobilizację.",
+        "primaryCta": "Zgłoś firmę do wczesnego dostępu",
+        "secondaryCta": "Zobacz workflow",
+        "microcopy": "Bez logowania dla dostawców. Przesłanie nigdy nie oznacza akceptacji.",
+        "trustLine": "Zatwierdzona automatyzacja · Bez logowania · Weryfikacja przez człowieka",
+        "scrollCta": "Przewiń dalej"
+      },
+      "workflowPreview": {
+        "vendor": "Northline HVAC",
+        "requirement": "Wymaganie: General Liability COI"
+      }
+    }
+  },
+  "navigation": {
+    "propertyTeams": "Dla nieruchomości",
+    "contractors": "Dla wykonawców"
+  },
+  "footer": {
+    "brand": "Vendoor Proof",
+    "productCopy": "Automatyczne follow upy dokumentów dostawców z weryfikacją przez człowieka tam gdzie ma to znaczenie.",
+    "legalDisclaimer": "Produkt pomaga zespołom zbierać kierować i śledzić dokumenty dostawców. Nie zapewnia porad prawnych ubezpieczeniowych brokerskich ani compliance i nie określa automatycznie czy dokument spełnia wymagania umowne lub regulacyjne.",
+    "legalLabel": "Prawne",
+    "productLabel": "Produkt",
+    "segmentsLabel": "Segmenty",
+    "tagline": "Follow-upy dokumentów z weryfikacją przez człowieka tam, gdzie ma to znaczenie.",
+    "copyright": "© 2026 Vendoor Proof. Wszelkie prawa zastrzeżone.",
+    "links": {
+      "privacy": "Prywatność",
+      "terms": "Regulamin",
+      "contact": "Kontakt"
+    },
+    "segments": {
+      "propertyTeams": "Dla nieruchomości",
+      "contractors": "Dla wykonawców"
+    }
+  },
+  "trustPages": {
+    "legalDisclaimer": "Produkt pomaga zespołom zbierać, kierować i śledzić dokumenty dostawców. Nie zapewnia porad prawnych, ubezpieczeniowych, brokerskich ani compliance i nie określa automatycznie, czy dokument spełnia wymagania umowne lub regulacyjne.",
+    "privacy": {
+      "title": "Prywatność",
+      "lead": "Ta strona opisze, jak przed startem produktu obsługiwane są dane leadów pilotażowych, dane kontaktowe i notatki z workflow."
+    },
+    "terms": {
+      "title": "Regulamin",
+      "lead": "Ta strona określi dostęp do pilota, dopuszczalne użycie i granice obietnicy: przesłanie dokumentu nie oznacza ostatecznej akceptacji compliance."
+    }
+  },
+  "notFound": {
+    "title": "Nie znaleziono strony",
+    "lead": "Żądana strona nie należy do tej kampanii."
+  },
+  "og": {
+    "title": "Follow-upy dokumentów dostawców bez ręcznego ścigania",
+    "subtitle": "Przesłane albo otrzymane nie znaczy zweryfikowane."
+  }
+}

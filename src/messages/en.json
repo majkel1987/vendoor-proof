@@ -1,0 +1,780 @@
+{
+  "layout": {
+    "skipToContent": "Skip to content"
+  },
+  "header": {
+    "brand": "Vendoor Proof",
+    "primaryNavLabel": "Primary navigation",
+    "primaryCta": "Talk to us about a pilot",
+    "nav": {
+      "howItWorks": "How it works",
+      "whatItAutomates": "What it automates",
+      "roi": "ROI",
+      "pilot": "Pilot",
+      "faq": "FAQ"
+    },
+    "segment": {
+      "label": "Campaign segment",
+      "propertyTeams": "Property teams",
+      "contractors": "Contractors"
+    },
+    "language": {
+      "label": "Language",
+      "en": "EN",
+      "pl": "PL"
+    },
+    "mobile": {
+      "open": "Open menu",
+      "close": "Close menu",
+      "title": "Navigation"
+    }
+  },
+  "landing": {
+    "workflowPreview": {
+      "ariaLabel": "Product workflow preview showing document queue, statuses, and reviewer tasks",
+      "workspace": "Compliance workspace",
+      "title": "Vendor compliance overview",
+      "liveBadge": "Automation active",
+      "metrics": {
+        "expiringSoon": {
+          "value": "12",
+          "label": "documents expiring soon"
+        },
+        "awaitingReview": {
+          "value": "8",
+          "label": "awaiting review"
+        },
+        "followUp": {
+          "value": "3",
+          "label": "vendors need follow-up"
+        }
+      },
+      "queue": {
+        "title": "Priority document queue",
+        "columns": {
+          "vendor": "Vendor",
+          "document": "Document",
+          "status": "Status",
+          "risk": "Risk",
+          "owner": "Owner"
+        },
+        "rows": {
+          "skyline": {
+            "vendor": "Skyline Electrical",
+            "document": "Liability insurance",
+            "status": "Expiring soon",
+            "risk": "7 days",
+            "owner": "J. Wisniewska"
+          },
+          "atlas": {
+            "vendor": "Atlas Construction",
+            "document": "General liability COI",
+            "status": "In review",
+            "risk": "Review",
+            "owner": "A. Kowalska"
+          },
+          "oak": {
+            "vendor": "Oakline Security",
+            "document": "Workers compensation",
+            "status": "Expired",
+            "risk": "Escalated",
+            "owner": "J. Patel"
+          }
+        }
+      },
+      "followUp": {
+        "title": "Follow-up automation"
+      },
+      "review": {
+        "title": "Reviewer queue",
+        "task": "Confirm coverage dates on Atlas Construction COI before approval.",
+        "escalation": "1 open escalation"
+      },
+      "controlBadge": "Reviewer decision required",
+      "statuses": {
+        "expiring": "Expiring",
+        "requested": "Requested",
+        "inReview": "In review",
+        "verified": "Verified"
+      },
+      "timeline": {
+        "ninetyDays": {
+          "time": "90 days before expiry",
+          "event": "Request sent"
+        },
+        "sixtyDays": {
+          "time": "60 days before expiry",
+          "event": "Follow-up scheduled"
+        },
+        "vendorUpload": {
+          "time": "Vendor upload",
+          "event": "Submitted for review"
+        },
+        "reviewerDecision": {
+          "time": "Reviewer decision",
+          "event": "Verified after human review"
+        }
+      },
+      "reviewNote": "Approval is a reviewer action, not a system assumption.",
+      "pauseMessage": "Follow-ups pause automatically when a file is submitted.",
+      "verificationRule": "Submitted or received does not mean verified."
+    },
+    "trustPrinciples": {
+      "approvedAutomation": {
+        "title": "Controlled automation",
+        "copy": "Messages will be delivered exactly according to the schedule and templates approved by your team."
+      },
+      "noVendorAccounts": {
+        "title": "No login required",
+        "copy": "Every request includes a secure and unique link that allows vendors to upload files quickly."
+      },
+      "humanReview": {
+        "title": "Final approval is in your hands",
+        "copy": "Submitted files will always go through verification. No document will be approved without your knowledge."
+      }
+    },
+    "problem": {
+      "eyebrow": "Document control automation",
+      "title": "Never let an important document expire unnoticed again.",
+      "lead": "The system continuously tracks deadlines, sends approved reminders and routes collected files to the right people. Your team will spot any risk before it becomes a real issue.",
+      "microcopy": "We do not replace human decisions. We simply automate all the repetitive work around them.",
+      "photo": {
+        "alt": "Compliance professional reviewing supplier documentation",
+        "monitoringActive": "Active monitoring",
+        "documentChecked": "Document verified",
+        "nextCheck": "Next check in 30 days"
+      },
+      "mockup": {
+        "workspace": "Compliance workspace",
+        "title": "Vendor compliance overview",
+        "liveBadge": "Automation active",
+        "metrics": {
+          "expiringSoon": {
+            "value": "12",
+            "label": "documents expiring soon"
+          },
+          "awaitingReview": {
+            "value": "8",
+            "label": "awaiting review"
+          },
+          "followUp": {
+            "value": "3",
+            "label": "vendors need follow up"
+          }
+        },
+        "columns": {
+          "vendor": "Vendor",
+          "document": "Document",
+          "status": "Status",
+          "expiry": "Expiry",
+          "owner": "Owner"
+        },
+        "rows": {
+          "atlas": {
+            "vendor": "Atlas Construction",
+            "document": "General Liability COI",
+            "status": "Pending review",
+            "expiry": "18 days",
+            "owner": "Anna Kowalska"
+          },
+          "northline": {
+            "vendor": "Northline Facilities",
+            "document": "Workers Compensation",
+            "status": "Valid",
+            "expiry": "96 days",
+            "owner": "Michal Nowak"
+          },
+          "skyline": {
+            "vendor": "Skyline Electrical",
+            "document": "Liability Insurance",
+            "status": "Expiring soon",
+            "expiry": "7 days",
+            "owner": "Julia Wisniewska"
+          },
+          "urban": {
+            "vendor": "Urban Build Group",
+            "document": "Safety Certificate",
+            "status": "Awaiting upload",
+            "expiry": "-",
+            "owner": "Tomasz Zielinski"
+          }
+        }
+      },
+      "workflow": {
+        "title": "Automation active",
+        "items": {
+          "fourteenDays": {
+            "time": "14 days before expiry",
+            "event": "Reminder sent to vendor"
+          },
+          "sevenDays": {
+            "time": "7 days before expiry",
+            "event": "Follow up scheduled"
+          },
+          "documentReceived": {
+            "time": "Document received",
+            "event": "Assigned to Anna Kowalska for review"
+          }
+        }
+      },
+      "proof": {
+        "deadlines": {
+          "title": "Expiry dates no longer live in a spreadsheet",
+          "copy": "The system will track every required document and highlight records approaching expiry."
+        },
+        "routing": {
+          "title": "Reminders follow an approved cadence",
+          "copy": "Vendors will get the right reminder at the right time."
+        },
+        "review": {
+          "title": "Uploaded files are routed to review",
+          "copy": "The received file is directed to a person who will verify it before it becomes an approved record."
+        }
+      }
+    },
+    "automation": {
+      "title": "The routine work runs automatically. Your team will review the decisions that matter.",
+      "lead": "Each automation will handle a concrete operational step. Review and approval will stay with your team.",
+      "items": {
+        "detect": {
+          "step": "01",
+          "title": "Detect",
+          "copy": "Flag missing, expiring, overdue, and unanswered document requirements.",
+          "preview": {
+            "missing": "Missing",
+            "expiring": "Expiring",
+            "overdue": "Overdue",
+            "unanswered": "Unanswered"
+          }
+        },
+        "followUp": {
+          "step": "02",
+          "title": "Follow up",
+          "copy": "Send approved requests and reminders with a secure vendor upload link.",
+          "preview": {
+            "label": "Email preview",
+            "template": "Approved template",
+            "subject": "Insurance document request",
+            "uploadLink": "Scoped upload link"
+          }
+        },
+        "escalate": {
+          "step": "03",
+          "title": "Escalate",
+          "copy": "Stop the sequence on upload and surface only overdue or high-risk exceptions.",
+          "preview": {
+            "label": "Owner alert",
+            "title": "Overdue exception",
+            "message": "Ready for action",
+            "action": "Review"
+          }
+        }
+      }
+    },
+    "workflow": {
+      "eyebrow": "Automated document workflow",
+      "title": "From detecting a missing file to a fully verified document",
+      "lead": "Our system tracks upcoming deadlines, contacts vendors independently and manages files at every stage. Your team will step in only when a final decision is required.",
+      "controlNote": "Final approval will always remain in human hands. Every submitted file requires verification and will never be approved automatically.",
+      "diagramAlt": "A six-step document workflow covering detection, request, reminders, receipt, human verification, and escalation before returning to monitoring.",
+      "diagramAriaLabel": "Six stages of the automated document workflow",
+      "continuousMonitoring": "Continuous monitoring after file approval",
+      "tabsLabel": "Workflow steps",
+      "nextLabel": "What happens next?",
+      "diagram": {
+        "ariaLabel": "Document workflow diagram from issue detection to a verified record",
+        "automaticLabel": "Automatic",
+        "humanLabel": "Human decision",
+        "exceptionLabel": "Conditional path",
+        "exceptionTrigger": "When the vendor does not respond or a deadline is at risk.",
+        "returnLabel": "Return to monitoring",
+        "verified": {
+          "number": "06",
+          "label": "Verified record",
+          "status": "Process complete",
+          "copy": "After approval, the document and decision are saved in the record's complete history."
+        }
+      },
+      "steps": {
+        "detect": {
+          "number": "01",
+          "label": "Detect",
+          "title": "A document is missing or approaching expiry.",
+          "copy": "The system will compare active requirements with expiry dates, missing files, unanswered requests, and overdue records.",
+          "summary": "The system monitors expiry dates, missing documents, and unanswered vendor requests.",
+          "status": "Trigger detected",
+          "next": "The approved request is prepared for the vendor.",
+          "mockupTitle": "Requirement monitor",
+          "mockupDetail": "Certificate will expire in 30 days.",
+          "preview": {
+            "monitor": "Requirement monitor",
+            "activeRules": "Rules scan every active vendor",
+            "missing": "Missing documents",
+            "expiring": "Expiring soon",
+            "unanswered": "No vendor response",
+            "alert": "Certificate will expire in 30 days"
+          }
+        },
+        "request": {
+          "number": "02",
+          "label": "Request",
+          "title": "The system sends the approved request and secure upload link.",
+          "copy": "The vendor will receive the exact template your team approved along with a secure link to the required document.",
+          "summary": "The system automatically sends an approved request for the current document.",
+          "status": "Request sent",
+          "next": "The record waits for a response or the next approved reminder.",
+          "mockupTitle": "Vendor request",
+          "mockupDetail": "Secure upload link attached to the certificate request.",
+          "preview": {
+            "template": "Approved request template",
+            "approved": "Email approved by the team",
+            "subject": "Request to renew certificate",
+            "link": "Secure upload link"
+          }
+        },
+        "followUp": {
+          "number": "03",
+          "label": "Follow up",
+          "title": "It follows up on the configured cadence if the vendor stays silent.",
+          "copy": "You will use specific days as configurable triggers rather than a mandatory schedule.",
+          "summary": "Scheduled reminders continue until the file is received.",
+          "status": "Cadence active",
+          "next": "A vendor upload stops the reminder sequence automatically.",
+          "mockupTitle": "Cadence settings",
+          "mockupDetail": "14, 7, and 0 days before expiry.",
+          "preview": {
+            "timeline": "Reminder timeline",
+            "cadence": "Approved cadence",
+            "fourteen": "14 days",
+            "seven": "7 days",
+            "today": "Today",
+            "sent": "Sent",
+            "scheduled": "Scheduled",
+            "waiting": "Waiting"
+          }
+        },
+        "upload": {
+          "number": "04",
+          "label": "Receive",
+          "title": "Upload stops the cadence and moves the file to review.",
+          "copy": "Submission will change the record status but does not mean the document is verified.",
+          "summary": "The vendor submits the document through a secure link without signing in.",
+          "status": "Submitted for review",
+          "next": "A reviewer checks the file before any verified status appears.",
+          "mockupTitle": "Submission status",
+          "mockupDetail": "Submitted to In review.",
+          "preview": {
+            "inbox": "Upload inbox",
+            "received": "Vendor file received",
+            "file": "Upload received",
+            "state": "Submitted to In review",
+            "confirmation": "Upload received. Reminders will stop automatically."
+          }
+        },
+        "review": {
+          "number": "05",
+          "label": "Verify",
+          "title": "The reviewer verifies, requests changes, or records a decision.",
+          "copy": "Human review will remain the control point to accept the file or send it back for corrections.",
+          "summary": "The received file enters a manual review queue and is never approved automatically.",
+          "status": "Review required",
+          "next": "Accepted, rejected, and requested change decisions are saved to the record.",
+          "mockupTitle": "Reviewer queue",
+          "mockupDetail": "File submitted. Review required.",
+          "preview": {
+            "queue": "Reviewer queue",
+            "reviewer": "Assigned to staff",
+            "coverage": "Limits visible",
+            "dates": "Effective dates checked",
+            "approval": "Received does not mean approved."
+          }
+        },
+        "escalation": {
+          "number": "06",
+          "label": "Escalate",
+          "title": "Exceptions escalate when a deadline or owner needs attention.",
+          "copy": "The system will show overdue and high risk exceptions so the right person can take action.",
+          "summary": "The system alerts the owner only about overdue, risky, or unresolved exceptions.",
+          "status": "Owner notified",
+          "next": "The exception returns to the priority view until it is resolved.",
+          "mockupTitle": "Escalation rule",
+          "mockupDetail": "Deadline at risk. Owner and manager are notified.",
+          "preview": {
+            "rule": "Escalation rule",
+            "overdue": "Overdue exception",
+            "reasonLabel": "Reason",
+            "reason": "No response to reminders",
+            "ownerLabel": "Owner",
+            "owner": "Assigned to process owner",
+            "note": "Deadline at risk. Owner and manager are notified."
+          }
+        }
+      }
+    },
+    "productPreview": {
+      "eyebrow": "Automated document reminders",
+      "title": "Keep vendor documents moving without manually chasing every single email.",
+      "lead": "Send requests, collect files, review submissions and escalate only the exceptions. Every document will keep a clear owner, strict deadline and complete audit trail.",
+      "principle": "Your team will review key decisions. The system will handle all reminders.",
+      "imageAlt": "Vendor document workflow from request and upload to review and escalation.",
+      "workflowAriaLabel": "Vendor document workflow",
+      "benefits": {
+        "automation": {
+          "title": "Requests and reminders will run automatically",
+          "copy": "Vendors will receive the exact message and secure upload link at the perfect time."
+        },
+        "uploads": {
+          "title": "Uploads will stop the chase",
+          "copy": "Once a file is submitted, all reminders will pause and the document will move straight to review."
+        },
+        "exceptions": {
+          "title": "Only exceptions will reach your team",
+          "copy": "Missing, rejected and expired records will stay highly visible until someone resolves them completely."
+        }
+      },
+      "steps": {
+        "request": {
+          "number": "01",
+          "label": "Request",
+          "copy": "Send the correct request"
+        },
+        "collect": {
+          "number": "02",
+          "label": "Collect",
+          "copy": "Vendor will upload securely"
+        },
+        "verify": {
+          "number": "03",
+          "label": "Verify",
+          "copy": "Review the submission"
+        },
+        "escalate": {
+          "number": "04",
+          "label": "Escalate",
+          "copy": "Route any unresolved risk"
+        }
+      }
+    },
+    "benefits": {
+      "title": "Turn a fragile spreadsheet process into a dependable operating routine.",
+      "items": {
+        "cadence": {
+          "title": "Automated cadence",
+          "copy": "Run follow-ups at the intervals your team approves."
+        },
+        "exceptionFirst": {
+          "title": "Exception-first view",
+          "copy": "Focus on missing, expiring, escalated, and awaiting-review records."
+        },
+        "uploadLinks": {
+          "title": "No-login upload links",
+          "copy": "Let vendors submit the requested file in under a minute."
+        },
+        "humanReview": {
+          "title": "Human review where it matters",
+          "copy": "Submission stops chasing; your team still makes the final decision."
+        },
+        "escalationRules": {
+          "title": "Escalation rules",
+          "copy": "Notify the owner and manager when a deadline is at risk."
+        },
+        "auditHistory": {
+          "title": "Audit-ready history",
+          "copy": "Keep every request, file, decision, and escalation in one timeline."
+        }
+      }
+    },
+    "roiCalculator": {
+      "title": "Estimate monthly manual follow-up time",
+      "description": "Use your own vendor volume and follow-up assumptions. The calculator runs locally in your browser.",
+      "resultLabel": "Estimated manual follow-up time",
+      "hoursResult": "{hours} hours per cycle",
+      "costResult": "Estimated internal cost: {cost} per cycle",
+      "estimateNote": "This is an estimate based on your inputs. It does not include the cost of delayed work, audit risk, or document review.",
+      "fields": {
+        "activeVendors": {
+          "label": "Active vendors",
+          "unit": "vendors"
+        },
+        "documentsPerVendor": {
+          "label": "Documents per vendor",
+          "unit": "docs"
+        },
+        "followUpsPerDocument": {
+          "label": "Average follow-ups per document",
+          "unit": "times"
+        },
+        "minutesPerFollowUp": {
+          "label": "Minutes per manual follow-up",
+          "unit": "min"
+        },
+        "hourlyCost": {
+          "label": "Optional hourly cost",
+          "unit": "USD"
+        }
+      }
+    },
+    "betaOffer": {
+      "title": "Early access for vendor-document teams",
+      "lead": "For operations and property teams that still track vendor documents across spreadsheets, folders, and email. Join the list to test a focused workflow for deadlines, follow-ups, uploads, and review history.",
+      "scope": {
+        "title": "Benefits for your team",
+        "items": {
+          "statusView": "A single clear view of all missing, expiring and pending documents.",
+          "manualFollowUp": "Less manual chasing thanks to automated reminders and clear escalation paths.",
+          "vendorUpload": "Simple upload links that allow vendors to submit files without creating an account.",
+          "auditTrail": "The complete history of requests, uploads and verification decisions stored in one place.",
+          "workspace": "One workspace",
+          "workflow": "One real document workflow",
+          "csvImport": "CSV import support",
+          "templates": "Approved email templates",
+          "weeklyReview": "Weekly exception review"
+        }
+      },
+      "requirements": {
+        "title": "What we need from you",
+        "items": {
+          "tracker": "Current tracker or sample CSV.",
+          "vendors": "10-30 representative vendors.",
+          "owner": "One owner for escalation decisions.",
+          "approval": "Approval of message templates and cadence."
+        }
+      },
+      "cta": {
+        "title": "Stop managing documents in spreadsheets",
+        "copy": "Focus only on what requires your attention. The system will automatically send routine reminders based on your rules, while your team will make the final decisions.",
+        "primary": "Join early access",
+        "secondary": "Book a discovery call",
+        "microcopy": "Early access is dedicated to teams with an established process, ready to test our solution on real workflows."
+      },
+      "pricingNote": "Founding pilot pricing starts at $99/month after fit confirmation."
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Questions teams ask before automating follow-up.",
+      "lead": "Clear answers on automation scope, vendor access, and how pilots usually start.",
+      "topicCount": "{count} topics covered",
+      "contactPrompt": "Need a walkthrough for your workflow?",
+      "contactLink": "Apply for an automation pilot",
+      "items": {
+        "emails": {
+          "question": "Will the app send emails to vendors automatically?",
+          "answer": "Yes, but only according to the cadence and templates your team approves. You can pause a sequence or require manual approval before messages go out."
+        },
+        "approval": {
+          "question": "Does the app automatically approve insurance certificates?",
+          "answer": "No. The system automates collection, routing, reminders, and record keeping. Final document verification stays with your team."
+        },
+        "vendorAccount": {
+          "question": "Can a vendor upload without an account?",
+          "answer": "Yes. Each request can include a secure, scoped magic link for the specific document request, so the vendor does not need an account."
+        },
+        "noResponse": {
+          "question": "What happens when a vendor does not respond?",
+          "answer": "The configured cadence continues until the deadline you set, then the exception can escalate to the owner or manager."
+        },
+        "otherDocuments": {
+          "question": "Can we track documents beyond COIs?",
+          "answer": "Yes. The workflow can track licenses, W-9s, safety documents, subcontractor packets, or other recurring vendor requirements."
+        },
+        "startSmall": {
+          "question": "Can we start with one building or project?",
+          "answer": "Yes. The pilot is designed around one real workflow first, so your team can validate the process before expanding it."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Stop treating vendor document management as a memory test.",
+      "copy": "Launch an automated workflow for your current vendor list and see how much time your team will save on daily communication.",
+      "primary": "Join early access"
+    },
+    "pilotForm": {
+      "title": "Join early access",
+      "lead": "Share the essentials so we can confirm fit and follow up with the right next step.",
+      "submit": "Join early access",
+      "privacyPrefix": "By submitting this form, you agree to be contacted regarding early access. Read our",
+      "privacyLink": "Privacy Policy",
+      "fields": {
+        "workEmail": {
+          "label": "Work email",
+          "placeholder": "name@company.com"
+        },
+        "firstName": {
+          "label": "First name",
+          "placeholder": "Alex"
+        },
+        "company": {
+          "label": "Company name",
+          "placeholder": "Northline Property Group"
+        },
+        "role": {
+          "label": "Role",
+          "placeholder": "Operations manager"
+        },
+        "companyType": {
+          "label": "Company type"
+        },
+        "activeVendors": {
+          "label": "Active vendors"
+        },
+        "currentProcess": {
+          "label": "Current process"
+        },
+        "monthlyFollowUps": {
+          "label": "Monthly follow-ups"
+        },
+        "biggestPain": {
+          "label": "Biggest pain, optional",
+          "placeholder": "What part of the follow-up process creates the most risk or manual work?"
+        },
+        "privacyConsent": {
+          "label": "I agree to be contacted regarding early access and I understand that submitting this form does not guarantee final approval."
+        },
+        "honeypot": {
+          "label": "Leave this field blank"
+        }
+      },
+      "options": {
+        "companyType": {
+          "Property management": "Property management",
+          "General contractor": "General contractor",
+          "Facilities": "Facilities",
+          "Other": "Other"
+        },
+        "activeVendors": {
+          "1-25": "1-25",
+          "26-100": "26-100",
+          "101-250": "101-250",
+          "250+": "250+"
+        },
+        "currentProcess": {
+          "Spreadsheet": "Spreadsheet",
+          "Shared drive": "Shared drive",
+          "Existing software": "Existing software",
+          "Other": "Other"
+        },
+        "monthlyFollowUps": {
+          "1-10": "1-10",
+          "11-25": "11-25",
+          "26-50": "26-50",
+          "50+": "50+",
+          "Not sure": "Not sure"
+        }
+      },
+      "errors": {
+        "required": "This field is required.",
+        "email": "Enter a valid work email.",
+        "min2": "Enter at least 2 characters.",
+        "max80": "Keep this under 80 characters.",
+        "max100": "Keep this under 100 characters.",
+        "max120": "Keep this under 120 characters.",
+        "max800": "Keep this under 800 characters.",
+        "consent": "Consent is required to submit the form.",
+        "submit": "We could not submit the request. Please try again.",
+        "network": "We could not reach the server. Check your connection and try again.",
+        "invalid": "Please fix the highlighted fields."
+      },
+      "success": {
+        "eyebrow": "Request received",
+        "title": "Thanks — we received your pilot application.",
+        "copy": "We will review your workflow details and follow up by email. You can also help us calibrate pricing with one optional answer below.",
+        "calendarCta": "Book a 20-minute workflow call",
+        "productCta": "See the first workflow",
+        "budget": {
+          "title": "What monthly budget would feel realistic for this workflow?",
+          "copy": "Optional research question. Your answer helps us understand fit; it is not a final price or offer.",
+          "note": "This will not affect the status of your pilot application.",
+          "options": {
+            "under100": "Under $100 / month",
+            "100to249": "$100-249 / month",
+            "250to499": "$250-499 / month",
+            "500to999": "$500-999 / month",
+            "1000plus": "$1,000+ / month"
+          }
+        }
+      }
+    }
+  },
+  "campaigns": {
+    "property-management": {
+      "metaTitle": "Automate Vendor Document Follow-Ups",
+      "metaDescription": "A vendor document workflow for property teams that automates approved follow-ups while keeping final compliance review with your team.",
+      "hero": {
+        "eyebrow": "Document reminder automation",
+        "title": "Track expiring vendor documents without manually sending out every single reminder.",
+        "lead": "Join our early access list. We will notify you as soon as we onboard more property management teams. We will show you how to streamline reminders, renewals and document verification in one seamless workflow.",
+        "context": "Built for small property teams still managing vendor compliance in spreadsheets, inboxes, and last-minute reminders.",
+        "primaryCta": "Join early access",
+        "secondaryCta": "See how it works",
+        "microcopy": "No vendor logins. Your team keeps final review control.",
+        "trustLine": "Complete control over sent messages · Fast file uploads without logging in · Final approval is always up to you",
+        "scrollCta": "Continue down"
+      },
+      "workflowPreview": {
+        "vendor": "Northline HVAC",
+        "requirement": "Requirement: General Liability COI"
+      }
+    },
+    "contractors": {
+      "metaTitle": "Prevent Delays from Expired Vendor Documents",
+      "metaDescription": "A lightweight vendor document workflow for contractors that keeps COIs, licenses, and subcontractor documents moving before work is blocked.",
+      "hero": {
+        "eyebrow": "Vendor document follow-up automation",
+        "title": "Automate vendor-document follow-ups before expired paperwork blocks work.",
+        "lead": "Keep COIs, licenses, and subcontractor documents moving without manually sending every reminder.",
+        "context": "A lightweight workflow for contractors who need to see what is missing, what is in review, and what can block mobilization.",
+        "primaryCta": "Request a pilot",
+        "secondaryCta": "See the workflow",
+        "microcopy": "No vendor logins. Submission never equals approval.",
+        "trustLine": "Approved automation · No vendor logins · Human review",
+        "scrollCta": "Continue down"
+      },
+      "workflowPreview": {
+        "vendor": "Northline HVAC",
+        "requirement": "Requirement: General Liability COI"
+      }
+    }
+  },
+  "navigation": {
+    "propertyTeams": "For property teams",
+    "contractors": "For contractors"
+  },
+  "footer": {
+    "brand": "Vendoor Proof",
+    "productCopy": "Automated vendor document follow ups with human review where it matters.",
+    "legalDisclaimer": "The product helps teams collect route and track vendor documents. It does not provide legal insurance brokerage or compliance advice and it will not automatically determine whether a document satisfies contractual or regulatory requirements.",
+    "legalLabel": "Legal",
+    "productLabel": "Product",
+    "segmentsLabel": "Segments",
+    "tagline": "Document follow-ups with human review where it matters.",
+    "copyright": "© 2026 Vendoor Proof. All rights reserved.",
+    "links": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "contact": "Contact"
+    },
+    "segments": {
+      "propertyTeams": "For property teams",
+      "contractors": "For contractors"
+    }
+  },
+  "trustPages": {
+    "legalDisclaimer": "The product helps teams collect, route, and track vendor documents. It does not provide legal, insurance, brokerage, or compliance advice, and it does not automatically determine whether a document satisfies contractual or regulatory requirements.",
+    "privacy": {
+      "title": "Privacy",
+      "lead": "This page will document how pilot lead data, contact details, and workflow notes are handled before launch."
+    },
+    "terms": {
+      "title": "Terms",
+      "lead": "This page will define pilot access, acceptable use, and the boundary that document submission is not final compliance approval."
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "lead": "The requested page is not part of this campaign."
+  },
+  "og": {
+    "title": "Vendor document follow-ups without manual chasing",
+    "subtitle": "Submitted or received does not mean verified."
+  }
+}
