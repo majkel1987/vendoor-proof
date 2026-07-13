@@ -677,9 +677,8 @@
       "success": {
         "eyebrow": "Request received",
         "title": "Thanks — we received your pilot application.",
-        "copy": "We will review your workflow details and follow up by email. You can also book a short call below if you want to walk through your process live.",
-        "calendarCta": "Book a 20-minute workflow call",
-        "productCta": "See the first workflow"
+        "copy": "We received your early access request and will review your details shortly.",
+        "note": "The product is currently in active development. We will notify you by email as soon as the MVP is ready."
       }
     }
   },

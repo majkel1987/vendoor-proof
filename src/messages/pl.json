@@ -677,9 +677,8 @@
       "success": {
         "eyebrow": "Zgłoszenie odebrane",
         "title": "Dziękujemy — mamy Twoje zgłoszenie do pilota.",
-        "copy": "Przejrzymy informacje o workflow i odezwiemy się e-mailem. Możesz też umówić krótką rozmowę poniżej, jeśli chcesz omówić proces na żywo.",
-        "calendarCta": "Umów 20-minutową rozmowę o workflow",
-        "productCta": "Zobacz pierwszy workflow"
+        "copy": "Otrzymaliśmy Twoje zgłoszenie do wczesnego dostępu i wkrótce je przejrzymy.",
+        "note": "Aplikacja jest obecnie w aktywnym rozwoju. Powiadomimy Cię e-mailem, gdy MVP będzie gotowe."
       }
     }
   },

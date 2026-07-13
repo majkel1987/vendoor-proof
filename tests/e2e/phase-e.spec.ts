@@ -61,7 +61,7 @@ test("EN property hero CTA validates the pilot form and reaches success", async 
     })
   ).toBeVisible();
   await expect(
-    page.getByRole("link", { name: "Book a 20-minute workflow call" })
+    page.getByText("The product is currently in active development.")
   ).toBeVisible();
 });
 

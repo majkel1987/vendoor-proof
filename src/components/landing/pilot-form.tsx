@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowUpRight, CalendarDays, CheckCircle2, Loader2 } from "lucide-react";
+import { CalendarDays, CheckCircle2, Loader2 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
@@ -215,14 +215,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
   }
 
   if (submissionPhase === "success" && successEmail) {
-    return (
-      <PilotSuccess
-        campaign={campaign}
-        email={successEmail}
-        locale={locale}
-        searchParams={searchParams}
-      />
-    );
+    return <PilotSuccess />;
   }
 
   return (
@@ -582,25 +575,8 @@ export function PilotForm({ campaign }: PilotFormProps) {
   );
 }
 
-function PilotSuccess({
-  campaign,
-  email,
-  locale,
-  searchParams
-}: {
-  campaign: CampaignConfig;
-  email: string;
-  locale: string;
-  searchParams: URLSearchParams;
-}) {
+function PilotSuccess() {
   const t = useTranslations("landing.pilotForm.success");
-  const pathname = usePathname();
-  const calendarUrl = buildCalendarUrl({
-    email,
-    locale,
-    campaign: campaign.segment,
-    searchParams
-  });
 
   useEffect(() => {
     document.getElementById("pilot-form")?.scrollIntoView({
@@ -631,28 +607,9 @@ function PilotSuccess({
           <p className="mt-3 max-w-[62ch] text-sm leading-6 text-foreground-muted md:text-base md:leading-7">
             {t("copy")}
           </p>
-          <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">
-            <Button asChild size="lg">
-              <a
-                href={calendarUrl}
-                onClick={() => {
-                  trackEvent(analyticsEvents.callBooked, {
-                    locale,
-                    campaign_segment: campaign.segment,
-                    page_path: pathname
-                  });
-                }}
-                rel="noreferrer"
-                target="_blank"
-              >
-                {t("calendarCta")}
-                <ArrowUpRight aria-hidden="true" />
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="secondary">
-              <a href="#workflow">{t("productCta")}</a>
-            </Button>
-          </div>
+          <p className="mt-4 max-w-[62ch] rounded-md border border-primary/15 bg-surface/72 px-4 py-3 text-sm leading-6 text-foreground md:text-base md:leading-7">
+            {t("note")}
+          </p>
         </div>
       </Container>
     </section>
@@ -743,40 +700,3 @@ function createLeadFormSchema(messages: {
 
 const inputClassName =
   "focus-ring h-11 w-full rounded-md border border-input bg-surface px-3 text-sm text-foreground";
-
-function buildCalendarUrl({
-  campaign,
-  email,
-  locale,
-  searchParams
-}: {
-  campaign: string;
-  email: string;
-  locale: string;
-  searchParams: Pick<URLSearchParams, "get">;
-}) {
-  const calendarBase =
-    process.env.NEXT_PUBLIC_CALENDAR_URL ??
-    "https://calendly.com/coi-tracker/workflow-call";
-  const url = new URL(calendarBase);
-
-  url.searchParams.set("email", email);
-  url.searchParams.set("locale", locale);
-  url.searchParams.set("campaign", campaign);
-
-  for (const key of [
-    "utm_source",
-    "utm_medium",
-    "utm_campaign",
-    "utm_content",
-    "utm_term"
-  ]) {
-    const value = searchParams.get(key);
-
-    if (value) {
-      url.searchParams.set(key, value);
-    }
-  }
-
-  return url.toString();
-}
