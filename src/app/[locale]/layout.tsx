@@ -27,11 +27,11 @@ const sourceSerif = Source_Serif_4({
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
-
 export const metadata: Metadata = baseMetadata();
 
 type LocaleLayoutProps = {
   children: ReactNode;
+  modal: ReactNode;
   params: Promise<{
     locale: string;
   }>;
@@ -39,6 +39,7 @@ type LocaleLayoutProps = {
 
 export default async function LocaleLayout({
   children,
+  modal,
   params
 }: LocaleLayoutProps) {
   const { locale } = await params;
@@ -57,6 +58,7 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <SiteShell skipLabel={t("skipToContent")}>{children}</SiteShell>
+          {modal}
         </NextIntlClientProvider>
         <Analytics />
         <SpeedInsights />

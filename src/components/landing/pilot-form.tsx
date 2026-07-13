@@ -13,10 +13,11 @@ import {
 } from "react-hook-form";
 import { z } from "zod";
 
+import { PrivacyRouteLink } from "@/components/legal/privacy-route-link";
 import { Container } from "@/components/shared/container";
 import { Button } from "@/components/ui/button";
 import { analyticsEvents } from "@/config/analytics-events";
-import { Link, usePathname } from "@/i18n/navigation";
+import { usePathname } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { trackEvent } from "@/lib/analytics";
 import type { CampaignConfig } from "@/types/landing";
@@ -560,12 +561,11 @@ export function PilotForm({ campaign }: PilotFormProps) {
 
             <p className="text-xs leading-5 text-foreground-muted sm:col-span-2">
               {t("privacyPrefix")}{" "}
-              <Link
-                className="font-semibold text-primary underline-offset-4 hover:underline"
-                href="/privacy"
+              <PrivacyRouteLink
+                className="focus-ring rounded-sm font-semibold text-primary underline-offset-4 hover:underline"
               >
                 {t("privacyLink")}
-              </Link>
+              </PrivacyRouteLink>
               .
             </p>
           </form>

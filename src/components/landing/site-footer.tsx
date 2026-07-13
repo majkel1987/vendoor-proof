@@ -2,6 +2,7 @@ import { ArrowUpRight, ShieldAlert } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 
+import { PrivacyRouteLink } from "@/components/legal/privacy-route-link";
 import { Container } from "@/components/shared/container";
 import { BrandLogo } from "@/components/shared/brand-logo";
 import { campaigns } from "@/config/landing-campaigns";
@@ -77,7 +78,13 @@ export async function SiteFooter({ segment }: SiteFooterProps) {
             </FooterNavGroup>
 
             <FooterNavGroup label={t("legalLabel")}>
-              <FooterLink href="/privacy">{t("links.privacy")}</FooterLink>
+              <PrivacyRouteLink className="focus-ring group text-foreground-muted hover:text-foreground inline-flex cursor-pointer items-center gap-1 rounded-md text-sm font-semibold transition-[color,transform] duration-200 active:translate-y-px">
+                {t("links.privacy")}
+                <ArrowUpRight
+                  aria-hidden="true"
+                  className="size-3.5 opacity-0 transition-[opacity,transform] duration-200 group-hover:translate-x-px group-hover:-translate-y-px group-hover:opacity-100"
+                />
+              </PrivacyRouteLink>
               <FooterLink href="/terms">{t("links.terms")}</FooterLink>
               <FooterAnchor href="#pilot-form">
                 {t("links.contact")}
@@ -96,7 +103,6 @@ export async function SiteFooter({ segment }: SiteFooterProps) {
     </footer>
   );
 }
-
 function BrandLink({
   brand,
   segment,
@@ -141,11 +147,11 @@ function FooterLink({
   href,
 }: {
   children: string;
-  href: "/privacy" | "/terms";
+  href: "/terms";
 }) {
   return (
     <Link
-      className="focus-ring group text-foreground-muted hover:text-foreground inline-flex cursor-pointer items-center gap-1 rounded-md text-sm font-semibold transition-colors duration-200"
+      className="focus-ring group text-foreground-muted hover:text-foreground inline-flex cursor-pointer items-center gap-1 rounded-md text-sm font-semibold transition-[color,transform] duration-200 active:translate-y-px"
       href={href}
     >
       {children}
