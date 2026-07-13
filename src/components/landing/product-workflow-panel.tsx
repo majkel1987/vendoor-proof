@@ -23,43 +23,27 @@ type ProductWorkflowPanelProps = {
 const toneStyles: Record<
   WorkflowStepTone,
   {
-    badge: string;
-    border: string;
     icon: string;
+    ring: string;
   }
 > = {
   primary: {
-    badge:
-      "border-primary/25 bg-surface/95 text-primary shadow-[0_10px_28px_rgb(15_83_79/0.14)]",
-    border: "border-primary/55",
     icon: "text-primary",
+    ring: "border-primary/25 group-hover:border-primary/50",
   },
   info: {
-    badge:
-      "border-info/25 bg-surface/95 text-info shadow-[0_10px_28px_rgb(37_99_235/0.12)]",
-    border: "border-info/55",
     icon: "text-info",
+    ring: "border-info/25 group-hover:border-info/50",
   },
   attention: {
-    badge:
-      "border-attention/30 bg-surface/95 text-[oklch(0.52_0.12_77)] shadow-[0_10px_28px_rgb(180_120_20/0.12)]",
-    border: "border-attention/55",
     icon: "text-[oklch(0.52_0.12_77)]",
+    ring: "border-attention/30 group-hover:border-attention/60",
   },
   danger: {
-    badge:
-      "border-danger/25 bg-surface/95 text-danger shadow-[0_10px_28px_rgb(185_60_40/0.14)]",
-    border: "border-danger/55",
     icon: "text-danger",
+    ring: "border-danger/25 group-hover:border-danger/50",
   },
 };
-
-const overlayAlignment = [
-  "items-start justify-start",
-  "items-start justify-end",
-  "items-end justify-start",
-  "items-end justify-end",
-] as const;
 
 export function ProductWorkflowPanel({
   imageAlt,
@@ -68,8 +52,8 @@ export function ProductWorkflowPanel({
 }: ProductWorkflowPanelProps) {
   return (
     <figure className="relative min-w-0">
-      <div className="border-border bg-surface-muted shadow-elevated relative overflow-hidden rounded-2xl border p-2 sm:p-3">
-        <div className="bg-background relative overflow-hidden rounded-xl">
+      <div className="border-border bg-surface-muted shadow-elevated relative overflow-hidden rounded-[1.75rem] border p-3 sm:p-4">
+        <div className="bg-background relative overflow-hidden rounded-[1.15rem]">
           <Image
             alt={imageAlt}
             className="h-auto w-full"
@@ -79,75 +63,40 @@ export function ProductWorkflowPanel({
             src="/illustrations/vendor-document-workflow.webp"
             width={2048}
           />
-
-          <ol
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 hidden grid-cols-2 grid-rows-2 gap-1 p-2 sm:grid sm:p-3 md:p-4"
-          >
-            {steps.map((step, index) => (
-              <li
-                className={cn("flex p-1 sm:p-2", overlayAlignment[index])}
-                key={step.key}
-              >
-                <span
-                  className={cn(
-                    "inline-flex max-w-[min(100%,11.5rem)] items-center gap-2 rounded-lg border px-2.5 py-1.5 text-left backdrop-blur-sm sm:max-w-[min(100%,13rem)] sm:px-3 sm:py-2",
-                    toneStyles[step.tone].badge,
-                  )}
-                >
-                  <step.Icon
-                    aria-hidden="true"
-                    className={cn("size-3.5 shrink-0 sm:size-4", toneStyles[step.tone].icon)}
-                  />
-                  <span className="min-w-0 leading-tight">
-                    <span className="block text-[0.625rem] font-bold tracking-[0.08em] uppercase opacity-80 sm:text-[0.6875rem]">
-                      {step.number}
-                    </span>
-                    <span className="text-foreground block text-[0.6875rem] font-bold sm:text-xs">
-                      {step.label}
-                    </span>
-                  </span>
-                </span>
-              </li>
-            ))}
-          </ol>
         </div>
       </div>
 
-      <figcaption className="mt-5">
+      <figcaption className="mt-6">
         <ol
           aria-label={workflowAriaLabel}
-          className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4"
+          className="sm:before:bg-border relative grid grid-cols-2 gap-x-3 gap-y-5 sm:grid-cols-4 sm:gap-3 sm:before:absolute sm:before:top-5 sm:before:right-[12.5%] sm:before:left-[12.5%] sm:before:h-px"
         >
           {steps.map((step) => (
             <li
               className={cn(
-                "border-border bg-surface rounded-xl border p-4",
-                "border-t-[3px]",
-                toneStyles[step.tone].border,
+                "group relative grid min-w-0 grid-cols-[2.5rem_minmax(0,1fr)] gap-2.5 sm:grid-cols-1 sm:justify-items-center sm:gap-2 sm:text-center",
               )}
               key={step.key}
             >
-              <div className="flex items-start gap-3">
-                <span
-                  className={cn(
-                    "bg-surface-muted flex size-9 shrink-0 items-center justify-center rounded-lg",
-                    toneStyles[step.tone].icon,
-                  )}
-                >
-                  <step.Icon aria-hidden="true" className="size-4" />
-                </span>
-                <div className="min-w-0">
-                  <p className="text-foreground text-sm font-bold tracking-[0.02em]">
-                    <span className="text-foreground-muted mr-1.5">
-                      {step.number}
-                    </span>
-                    {step.label}
-                  </p>
-                  <p className="text-foreground-muted mt-1.5 text-sm leading-6">
-                    {step.copy}
-                  </p>
-                </div>
+              <span
+                className={cn(
+                  "bg-surface relative z-10 flex size-10 shrink-0 items-center justify-center rounded-xl border transition-[border-color,transform] duration-200 group-hover:-translate-y-0.5",
+                  toneStyles[step.tone].icon,
+                  toneStyles[step.tone].ring,
+                )}
+              >
+                <step.Icon aria-hidden="true" className="size-4" />
+              </span>
+              <div className="min-w-0 pt-0.5 sm:pt-0">
+                <p className="text-foreground text-xs leading-5 font-bold sm:text-sm">
+                  <span className="text-foreground-muted mr-1 tabular-nums">
+                    {step.number}
+                  </span>
+                  {step.label}
+                </p>
+                <p className="text-foreground-muted mt-0.5 text-xs leading-5">
+                  {step.copy}
+                </p>
               </div>
             </li>
           ))}

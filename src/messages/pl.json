@@ -412,46 +412,48 @@
       }
     },
     "productPreview": {
-      "eyebrow": "Zautomatyzowane przypomnienia o dokumentach",
-      "title": "Utrzymaj płynny obieg dokumentów od dostawców bez konieczności śledzenia każdego maila.",
-      "lead": "Wysyłaj prośby, zbieraj pliki, weryfikuj zgłoszenia oraz eskaluj tylko wyjątki. Każdy dokument posiada przypisanego właściciela, jasny termin oraz pełną historię zmian.",
-      "principle": "Twój zespół podejmuje kluczowe decyzje. System zajmuje się całą komunikacją.",
-      "imageAlt": "Obieg dokumentów dostawcy od prośby i przesłania pliku do weryfikacji i eskalacji.",
+      "eyebrow": "Automatyczne zbieranie dokumentów",
+      "title": "Koniec z upominaniem się o dokumenty.",
+      "lead": "VendorProof wysyła prośby, automatycznie przypomina i przekazuje Twojemu zespołowi tylko nierozwiązane wyjątki.",
+      "principle": "Twój zespół podejmuje decyzje. VendorProof zajmuje się przypomnieniami.",
+      "primaryCta": "Dołącz do listy",
+      "secondaryCta": "Zobacz, jak to działa",
+      "imageAlt": "Obieg dokumentów dostawcy pokazujący automatyczną prośbę, bezpieczne przesłanie pliku, ręczną weryfikację i eskalację wyjątku.",
       "workflowAriaLabel": "Obieg dokumentów dostawcy",
       "benefits": {
         "automation": {
-          "title": "Prośby i przypomnienia działają w tle",
-          "copy": "Dostawcy otrzymują odpowiednią wiadomość oraz link do wgrania plików dokładnie wtedy, kiedy jest to potrzebne."
+          "title": "Automatyczne przypomnienia",
+          "copy": "Prośby i przypomnienia są wysyłane do chwili przesłania wymaganego pliku."
         },
         "uploads": {
-          "title": "Przesłanie pliku zatrzymuje powiadomienia",
-          "copy": "Gdy tylko dokument zostanie wgrany, przypomnienia są wstrzymywane, a plik trafia do weryfikacji."
+          "title": "Bezpieczne przesyłanie",
+          "copy": "Dostawca otrzymuje dedykowany link i nie musi zakładać konta."
         },
         "exceptions": {
-          "title": "Tylko sytuacje awaryjne trafiają do Twojego zespołu",
-          "copy": "Brakujące, odrzucone lub przeterminowane dokumenty pozostają widoczne do momentu ich ostatecznego rozwiązania."
+          "title": "Weryfikacja tylko wyjątków",
+          "copy": "Zespół reaguje tylko wtedy, gdy dokumentu brakuje, został odrzucony lub wygasł."
         }
       },
       "steps": {
         "request": {
           "number": "01",
           "label": "Prośba",
-          "copy": "Wyślij odpowiednie zapytanie"
+          "copy": "Wyślij prośbę"
         },
         "collect": {
           "number": "02",
           "label": "Odbiór",
-          "copy": "Dostawca bezpiecznie przesyła plik"
+          "copy": "Dostawca przesyła"
         },
         "verify": {
           "number": "03",
           "label": "Weryfikacja",
-          "copy": "Przejrzyj przesłane zgłoszenie"
+          "copy": "Sprawdź dokument"
         },
         "escalate": {
           "number": "04",
           "label": "Eskalacja",
-          "copy": "Przekaż nierozwiązany problem dalej"
+          "copy": "Rozwiąż wyjątek"
         }
       }
     },

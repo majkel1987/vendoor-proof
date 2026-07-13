@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { LanguageSwitcher } from "@/components/landing/language-switcher";
-import { SegmentDropdown } from "@/components/landing/segment-dropdown";
+import { SegmentSideRail } from "@/components/landing/segment-side-rail";
 import {
   TrackedAnchor,
   trackNavAnchor,
@@ -38,9 +38,15 @@ export function SiteHeader({ segment }: SiteHeaderProps) {
   const t = useTranslations("header");
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 pt-3">
-      <Container className="max-w-[96rem]">
-        <div className="border-primary/15 flex h-16 items-center justify-between gap-4 rounded-xl border bg-white/[0.86] px-3.5 shadow-[0_12px_36px_-24px_rgb(7_44_39/0.38)] backdrop-blur-xl md:px-4">
+    <>
+      <SegmentSideRail
+        locale={locale}
+        pathname={pathname}
+        segment={segment}
+      />
+      <header className="fixed inset-x-0 top-0 z-40 pt-3">
+        <Container className="max-w-[96rem]">
+          <div className="border-primary/15 flex h-16 items-center justify-between gap-4 rounded-xl border bg-white/[0.86] px-3.5 shadow-[0_12px_36px_-24px_rgb(7_44_39/0.38)] backdrop-blur-xl md:px-4">
           <LogoLink brand={t("brand")} segment={segment} />
 
           <nav
@@ -81,11 +87,6 @@ export function SiteHeader({ segment }: SiteHeaderProps) {
                 <ArrowRight className="size-4" />
               </span>
             </TrackedAnchor>
-            <SegmentDropdown
-              locale={locale}
-              pathname={pathname}
-              segment={segment}
-            />
           </div>
 
           <div className="flex items-center gap-3 xl:hidden">
@@ -101,10 +102,10 @@ export function SiteHeader({ segment }: SiteHeaderProps) {
               <Menu aria-hidden="true" />
             </Button>
           </div>
-        </div>
-      </Container>
+          </div>
+        </Container>
 
-      <Sheet
+        <Sheet
         ariaLabel={t("mobile.title")}
         closeLabel={t("mobile.close")}
         onOpenChange={setMenuOpen}
@@ -150,20 +151,9 @@ export function SiteHeader({ segment }: SiteHeaderProps) {
           <LanguageSwitcher compact segment={segment} />
         </div>
 
-        <div className="mt-8 grid gap-4">
-          <p className="text-foreground-muted text-sm font-semibold">
-            {t("segment.label")}
-          </p>
-          <SegmentDropdown
-            compact
-            fullWidth
-            locale={locale}
-            pathname={pathname}
-            segment={segment}
-          />
-        </div>
-      </Sheet>
-    </header>
+        </Sheet>
+      </header>
+    </>
   );
 }
 

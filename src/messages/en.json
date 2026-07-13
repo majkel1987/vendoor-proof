@@ -412,46 +412,48 @@
       }
     },
     "productPreview": {
-      "eyebrow": "Automated document reminders",
-      "title": "Keep vendor documents moving without manually chasing every single email.",
-      "lead": "Send requests, collect files, review submissions and escalate only the exceptions. Every document will keep a clear owner, strict deadline and complete audit trail.",
-      "principle": "Your team will review key decisions. The system will handle all reminders.",
-      "imageAlt": "Vendor document workflow from request and upload to review and escalation.",
+      "eyebrow": "Automated document collection",
+      "title": "Stop chasing vendors for documents.",
+      "lead": "VendorProof sends requests, follows up automatically and routes only unresolved exceptions to your team.",
+      "principle": "Your team makes the decisions. VendorProof handles the follow-up.",
+      "primaryCta": "Join the waitlist",
+      "secondaryCta": "See how it works",
+      "imageAlt": "Vendor document workflow showing automated request, secure file collection, manual verification and exception escalation.",
       "workflowAriaLabel": "Vendor document workflow",
       "benefits": {
         "automation": {
-          "title": "Requests and reminders will run automatically",
-          "copy": "Vendors will receive the exact message and secure upload link at the perfect time."
+          "title": "Automated follow-ups",
+          "copy": "Requests and reminders continue until the required file is submitted."
         },
         "uploads": {
-          "title": "Uploads will stop the chase",
-          "copy": "Once a file is submitted, all reminders will pause and the document will move straight to review."
+          "title": "Secure uploads",
+          "copy": "Vendors receive a dedicated upload link without needing an account."
         },
         "exceptions": {
-          "title": "Only exceptions will reach your team",
-          "copy": "Missing, rejected and expired records will stay highly visible until someone resolves them completely."
+          "title": "Exception-only review",
+          "copy": "Your team steps in only when a document is missing, rejected or expired."
         }
       },
       "steps": {
         "request": {
           "number": "01",
           "label": "Request",
-          "copy": "Send the correct request"
+          "copy": "Send request"
         },
         "collect": {
           "number": "02",
           "label": "Collect",
-          "copy": "Vendor will upload securely"
+          "copy": "Vendor uploads"
         },
         "verify": {
           "number": "03",
           "label": "Verify",
-          "copy": "Review the submission"
+          "copy": "Review submission"
         },
         "escalate": {
           "number": "04",
           "label": "Escalate",
-          "copy": "Route any unresolved risk"
+          "copy": "Resolve exceptions"
         }
       }
     },

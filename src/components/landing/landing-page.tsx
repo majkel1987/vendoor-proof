@@ -26,7 +26,7 @@ export async function LandingPage({ campaign }: LandingPageProps) {
           <TrustPrinciples />
           <ProblemSection />
           <ProcessSection />
-          <ProductPreview />
+          <ProductPreview segment={campaign.segment} />
           <FaqSection segment={campaign.segment} />
           <Suspense fallback={null}>
             <PilotForm campaign={campaign} />
