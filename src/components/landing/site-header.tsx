@@ -63,11 +63,6 @@ export function SiteHeader({ segment }: SiteHeaderProps) {
           </nav>
 
           <div className="hidden items-center gap-2 xl:flex">
-            <SegmentDropdown
-              locale={locale}
-              pathname={pathname}
-              segment={segment}
-            />
             <LanguageSwitcher segment={segment} />
             <TrackedAnchor
               className="group bg-foreground text-background hover:bg-primary h-10 rounded-full px-4 pr-1.5 shadow-[0_10px_24px_-14px_rgb(9_33_29/0.55)] transition-[background-color,transform] duration-200 hover:-translate-y-px"
@@ -86,6 +81,11 @@ export function SiteHeader({ segment }: SiteHeaderProps) {
                 <ArrowRight className="size-4" />
               </span>
             </TrackedAnchor>
+            <SegmentDropdown
+              locale={locale}
+              pathname={pathname}
+              segment={segment}
+            />
           </div>
 
           <div className="flex items-center gap-3 xl:hidden">
@@ -145,6 +145,13 @@ export function SiteHeader({ segment }: SiteHeaderProps) {
 
         <div className="mt-8 grid gap-4">
           <p className="text-foreground-muted text-sm font-semibold">
+            {t("language.label")}
+          </p>
+          <LanguageSwitcher compact segment={segment} />
+        </div>
+
+        <div className="mt-8 grid gap-4">
+          <p className="text-foreground-muted text-sm font-semibold">
             {t("segment.label")}
           </p>
           <SegmentDropdown
@@ -154,13 +161,6 @@ export function SiteHeader({ segment }: SiteHeaderProps) {
             pathname={pathname}
             segment={segment}
           />
-        </div>
-
-        <div className="mt-8 grid gap-4">
-          <p className="text-foreground-muted text-sm font-semibold">
-            {t("language.label")}
-          </p>
-          <LanguageSwitcher compact segment={segment} />
         </div>
       </Sheet>
     </header>

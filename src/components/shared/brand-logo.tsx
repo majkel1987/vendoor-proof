@@ -57,8 +57,9 @@ export function BrandMark({
   size?: number;
   style?: CSSProperties;
 }) {
-  const teal = monochrome ? "currentColor" : "#08706b";
-  const navy = monochrome ? "currentColor" : "#172033";
+  const teal = monochrome ? "currentColor" : "#087b76";
+  const navy = monochrome ? "currentColor" : "#132239";
+  const cutout = monochrome ? "var(--background, white)" : "white";
 
   return (
     <svg
@@ -67,31 +68,22 @@ export function BrandMark({
       fill="none"
       height={size}
       style={style}
-      viewBox="0 0 40 40"
+      viewBox="0 0 100 100"
       width={size}
     >
-      <rect
-        fill={monochrome ? "none" : "#e7f6f3"}
-        height="38"
-        rx="11"
-        stroke={monochrome ? "currentColor" : "#b8e2dc"}
-        width="38"
-        x="1"
-        y="1"
-      />
+      <path d="M4 8h26.5L50 49 70.5 8H93L59.5 92h-20L4 8Z" fill={teal} />
       <path
-        d="M22.5 11.5v17M22.5 12h5.25c3.65 0 6 2.15 6 5.35s-2.35 5.4-6 5.4H23"
-        stroke={navy}
+        d="M50 8h23.5C88 8 98 18.7 98 35.5S88 63 73.5 63H69v29H50V8Zm19 18v19h4.5c4.2 0 7.5-3.5 7.5-9.5S77.7 26 73.5 26H69Z"
+        fill={navy}
+        fillRule="evenodd"
+      />
+      <path d="M50 8h11v39.5l-7-7-7 7V28.5L50 25V8Z" fill={teal} />
+      <path
+        d="m36 40.5 14 14 25-28"
+        stroke={cutout}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="3.2"
-      />
-      <path
-        d="m7.75 13.25 8.1 15 8.65-16"
-        stroke={teal}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="3.8"
+        strokeWidth="9"
       />
     </svg>
   );
