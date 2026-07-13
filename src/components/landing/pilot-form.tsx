@@ -35,7 +35,7 @@ type FormValues = {
   companyType: (typeof companyTypeOptions)[number];
   activeVendors: (typeof activeVendorOptions)[number];
   currentProcess: (typeof currentProcessOptions)[number];
-  monthlyFollowUps?: string;
+  monthlyFollowUps?: (typeof monthlyFollowUpOptions)[number];
   biggestPain?: string;
   privacyConsent: boolean;
   campaignSegment: CampaignConfig["segment"];
@@ -59,19 +59,19 @@ const currentProcessOptions = [
   "Other"
 ] as const;
 
+const monthlyFollowUpOptions = [
+  "1-10",
+  "11-25",
+  "26-50",
+  "50+",
+  "Not sure"
+] as const;
+
 const formPanelItems = [
   "statusView",
   "manualFollowUp",
   "vendorUpload",
   "auditTrail"
-] as const;
-
-const budgetOptionKeys = [
-  "under100",
-  "100to249",
-  "250to499",
-  "500to999",
-  "1000plus"
 ] as const;
 
 export function PilotForm({ campaign }: PilotFormProps) {
@@ -228,12 +228,12 @@ export function PilotForm({ campaign }: PilotFormProps) {
   return (
     <section
       aria-labelledby="pilot-form-heading"
-      className="border-border scroll-mt-28 border-b bg-surface py-16 md:py-24"
+      className="border-border scroll-mt-28 border-b bg-surface py-12 md:py-16"
       id="pilot-form"
     >
       <Container className="max-w-[88rem]">
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] lg:items-stretch">
-          <aside className="relative overflow-hidden rounded-lg border border-primary/20 bg-primary-subtle p-6 shadow-card md:p-8 lg:p-10">
+        <div className="grid gap-5 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] lg:items-stretch lg:gap-6">
+          <aside className="relative overflow-hidden rounded-lg border border-primary/20 bg-primary-subtle p-5 shadow-card md:p-7 lg:p-8">
             <div
               aria-hidden="true"
               className="absolute -right-20 -bottom-24 size-72 rounded-full bg-primary/10 blur-3xl"
@@ -243,29 +243,29 @@ export function PilotForm({ campaign }: PilotFormProps) {
               className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-primary/35 via-white/70 to-transparent"
             />
             <div className="relative z-10 flex h-full flex-col">
-              <div className="flex size-12 items-center justify-center rounded-md bg-surface text-primary shadow-card">
-                <CalendarDays aria-hidden="true" className="size-6" />
+              <div className="flex size-11 items-center justify-center rounded-md bg-surface text-primary shadow-card">
+                <CalendarDays aria-hidden="true" className="size-5" />
               </div>
-              <p className="mt-8 text-sm leading-6 font-bold tracking-[0.1em] text-primary uppercase">
+              <p className="mt-6 text-xs leading-5 font-bold tracking-[0.1em] text-primary uppercase">
                 {offerT("title")}
               </p>
-              <h2 className="mt-3 text-3xl leading-[1.05] font-semibold text-foreground text-balance md:text-4xl">
+              <h2 className="mt-2 text-2xl leading-tight font-semibold text-foreground text-balance md:text-3xl">
                 {offerT("cta.title")}
               </h2>
-              <p className="mt-5 max-w-[38rem] text-base leading-7 text-foreground-muted">
+              <p className="mt-3 max-w-[38rem] text-sm leading-6 text-foreground-muted">
                 {offerT("cta.copy")}
               </p>
 
-              <div className="mt-8 rounded-lg border border-primary/15 bg-surface/72 p-4">
+              <div className="mt-6 rounded-lg border border-primary/15 bg-surface/72 p-3.5">
                 <h3 className="text-sm font-semibold text-foreground">
                   {offerT("scope.title")}
                 </h3>
-                <ul className="mt-4 grid gap-3">
+                <ul className="mt-3 grid gap-2.5">
                   {formPanelItems.map((item) => (
-                    <li className="flex gap-3 text-sm leading-6" key={item}>
+                    <li className="flex gap-2.5 text-sm leading-5" key={item}>
                       <CheckCircle2
                         aria-hidden="true"
-                        className="mt-0.5 size-5 shrink-0 text-primary"
+                        className="mt-0.5 size-4 shrink-0 text-primary"
                       />
                       <span className="text-foreground-muted">
                         {offerT(`scope.items.${item}`)}
@@ -275,14 +275,14 @@ export function PilotForm({ campaign }: PilotFormProps) {
                 </ul>
               </div>
 
-              <p className="mt-auto pt-8 text-sm leading-6 font-semibold text-foreground-muted">
+              <p className="mt-auto pt-6 text-sm leading-5 font-semibold text-foreground-muted">
                 {offerT("cta.microcopy")}
               </p>
             </div>
           </aside>
 
           <form
-            className="grid gap-5 rounded-lg border border-border bg-background p-5 shadow-card md:grid-cols-2 md:p-6 lg:p-8"
+            className="grid gap-3 rounded-lg border border-border bg-background p-4 shadow-card sm:grid-cols-2 md:gap-3.5 md:p-5 lg:p-6"
             noValidate
             onFocusCapture={() => {
               handleFormInteraction();
@@ -290,212 +290,291 @@ export function PilotForm({ campaign }: PilotFormProps) {
             }}
             onSubmit={handleSubmit(onSubmit, onInvalid)}
           >
-            <div className="md:col-span-2">
+            <div className="sm:col-span-2">
               <h2
-                className="text-3xl leading-[1.08] font-semibold text-foreground md:text-4xl"
+                className="text-2xl leading-tight font-semibold text-foreground md:text-3xl"
                 id="pilot-form-heading"
               >
                 {t("title")}
               </h2>
-              <p className="mt-3 max-w-[62ch] text-base leading-7 text-foreground-muted">
+              <p className="mt-2 max-w-[62ch] text-sm leading-6 text-foreground-muted">
                 {t("lead")}
               </p>
             </div>
 
-          <FormField
-            error={errors.workEmail}
-            label={t("fields.workEmail.label")}
-            name="workEmail"
-          >
-            <input
-              {...register("workEmail", {
-                onBlur: () => {
-                  if (workEmail) {
-                    trackEvent(analyticsEvents.leadEmailEntered, {
+            <FormField
+              error={errors.firstName}
+              label={t("fields.firstName.label")}
+              name="firstName"
+            >
+              <input
+                {...register("firstName")}
+                aria-describedby={fieldDescription("firstName", errors.firstName)}
+                aria-invalid={Boolean(errors.firstName)}
+                autoComplete="given-name"
+                className={inputClassName}
+                id="firstName"
+                placeholder={t("fields.firstName.placeholder")}
+                type="text"
+              />
+            </FormField>
+
+            <FormField
+              error={errors.workEmail}
+              label={t("fields.workEmail.label")}
+              name="workEmail"
+            >
+              <input
+                {...register("workEmail", {
+                  onBlur: () => {
+                    if (workEmail) {
+                      trackEvent(analyticsEvents.leadEmailEntered, {
+                        locale,
+                        campaign_segment: campaign.segment,
+                        page_path: pathname
+                      });
+                    }
+                  }
+                })}
+                aria-describedby={fieldDescription("workEmail", errors.workEmail)}
+                aria-invalid={Boolean(errors.workEmail)}
+                autoComplete="email"
+                className={inputClassName}
+                id="workEmail"
+                placeholder={t("fields.workEmail.placeholder")}
+                type="email"
+              />
+            </FormField>
+
+            <FormField
+              error={errors.company}
+              label={t("fields.company.label")}
+              name="company"
+            >
+              <input
+                {...register("company")}
+                aria-describedby={fieldDescription("company", errors.company)}
+                aria-invalid={Boolean(errors.company)}
+                autoComplete="organization"
+                className={inputClassName}
+                id="company"
+                placeholder={t("fields.company.placeholder")}
+                type="text"
+              />
+            </FormField>
+
+            <FormField
+              error={errors.role}
+              label={t("fields.role.label")}
+              name="role"
+            >
+              <input
+                {...register("role")}
+                aria-describedby={fieldDescription("role", errors.role)}
+                aria-invalid={Boolean(errors.role)}
+                autoComplete="organization-title"
+                className={inputClassName}
+                id="role"
+                placeholder={t("fields.role.placeholder")}
+                type="text"
+              />
+            </FormField>
+
+            <FormField
+              error={errors.companyType}
+              label={t("fields.companyType.label")}
+              name="companyType"
+            >
+              <select
+                {...register("companyType", {
+                  onChange: (event) => {
+                    trackEvent(analyticsEvents.companyTypeSelected, {
                       locale,
                       campaign_segment: campaign.segment,
-                      page_path: pathname
+                      page_path: pathname,
+                      value: event.target.value
                     });
                   }
-                }
-              })}
-              aria-describedby={fieldDescription("workEmail", errors.workEmail)}
-              aria-invalid={Boolean(errors.workEmail)}
-              className={inputClassName}
-              id="workEmail"
-              placeholder={t("fields.workEmail.placeholder")}
-              type="email"
-            />
-          </FormField>
+                })}
+                aria-describedby={fieldDescription("companyType", errors.companyType)}
+                aria-invalid={Boolean(errors.companyType)}
+                className={inputClassName}
+                id="companyType"
+              >
+                {companyTypeOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {t(`options.companyType.${option}`)}
+                  </option>
+                ))}
+              </select>
+            </FormField>
 
-          <FormField
-            error={errors.company}
-            label={t("fields.company.label")}
-            name="company"
-          >
-            <input
-              {...register("company")}
-              aria-describedby={fieldDescription("company", errors.company)}
-              aria-invalid={Boolean(errors.company)}
-              className={inputClassName}
-              id="company"
-              placeholder={t("fields.company.placeholder")}
-              type="text"
-            />
-          </FormField>
-
-          <FormField
-            error={errors.companyType}
-            label={t("fields.companyType.label")}
-            name="companyType"
-          >
-            <select
-              {...register("companyType", {
-                onChange: (event) => {
-                  trackEvent(analyticsEvents.companyTypeSelected, {
-                    locale,
-                    campaign_segment: campaign.segment,
-                    page_path: pathname,
-                    value: event.target.value
-                  });
-                }
-              })}
-              aria-describedby={fieldDescription("companyType", errors.companyType)}
-              aria-invalid={Boolean(errors.companyType)}
-              className={inputClassName}
-              id="companyType"
+            <FormField
+              error={errors.activeVendors}
+              label={t("fields.activeVendors.label")}
+              name="activeVendors"
             >
-              {companyTypeOptions.map((option) => (
-                <option key={option} value={option}>
-                  {t(`options.companyType.${option}`)}
-                </option>
-              ))}
-            </select>
-          </FormField>
-
-          <FormField
-            error={errors.activeVendors}
-            label={t("fields.activeVendors.label")}
-            name="activeVendors"
-          >
-            <select
-              {...register("activeVendors", {
-                onChange: (event) => {
-                  trackEvent(analyticsEvents.vendorVolumeSelected, {
-                    locale,
-                    campaign_segment: campaign.segment,
-                    page_path: pathname,
-                    value: event.target.value
-                  });
-                }
-              })}
-              aria-describedby={fieldDescription(
-                "activeVendors",
-                errors.activeVendors
-              )}
-              aria-invalid={Boolean(errors.activeVendors)}
-              className={inputClassName}
-              id="activeVendors"
-            >
-              {activeVendorOptions.map((option) => (
-                <option key={option} value={option}>
-                  {t(`options.activeVendors.${option}`)}
-                </option>
-              ))}
-            </select>
-          </FormField>
-
-          <FormField
-            error={errors.currentProcess}
-            label={t("fields.currentProcess.label")}
-            name="currentProcess"
-          >
-            <select
-              {...register("currentProcess", {
-                onChange: (event) => {
-                  trackEvent(analyticsEvents.currentProcessSelected, {
-                    locale,
-                    campaign_segment: campaign.segment,
-                    page_path: pathname,
-                    value: event.target.value
-                  });
-                }
-              })}
-              aria-describedby={fieldDescription(
-                "currentProcess",
-                errors.currentProcess
-              )}
-              aria-invalid={Boolean(errors.currentProcess)}
-              className={inputClassName}
-              id="currentProcess"
-            >
-              {currentProcessOptions.map((option) => (
-                <option key={option} value={option}>
-                  {t(`options.currentProcess.${option}`)}
-                </option>
-              ))}
-            </select>
-          </FormField>
-
-          <div className="absolute top-auto left-[-10000px] h-px w-px overflow-hidden">
-            <input
-              {...register("honeypot")}
-              aria-label={t("fields.honeypot.label")}
-              autoComplete="off"
-              id="companyWebsite"
-              tabIndex={-1}
-              type="text"
-            />
-          </div>
-
-          <div className="md:col-span-2">
-            <label className="flex items-start gap-3 text-sm leading-6 text-foreground-muted">
-              <input
-                {...register("privacyConsent")}
+              <select
+                {...register("activeVendors", {
+                  onChange: (event) => {
+                    trackEvent(analyticsEvents.vendorVolumeSelected, {
+                      locale,
+                      campaign_segment: campaign.segment,
+                      page_path: pathname,
+                      value: event.target.value
+                    });
+                  }
+                })}
                 aria-describedby={fieldDescription(
-                  "privacyConsent",
-                  errors.privacyConsent
+                  "activeVendors",
+                  errors.activeVendors
                 )}
-                aria-invalid={Boolean(errors.privacyConsent)}
-                className="focus-ring mt-1 size-4 rounded border-input"
-                type="checkbox"
-              />
-              <span>{t("fields.privacyConsent.label")}</span>
-            </label>
-            <FieldErrorMessage error={errors.privacyConsent} name="privacyConsent" />
-          </div>
+                aria-invalid={Boolean(errors.activeVendors)}
+                className={inputClassName}
+                id="activeVendors"
+              >
+                {activeVendorOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {t(`options.activeVendors.${option}`)}
+                  </option>
+                ))}
+              </select>
+            </FormField>
 
-          <input type="hidden" {...register("campaignSegment")} />
-          <input type="hidden" {...register("locale")} />
-
-          {submitError ? (
-            <p
-              aria-live="assertive"
-              className="rounded-md border border-destructive/25 bg-surface px-4 py-3 text-sm font-semibold text-destructive md:col-span-2"
-              role="alert"
+            <FormField
+              error={errors.currentProcess}
+              label={t("fields.currentProcess.label")}
+              name="currentProcess"
             >
-              {submitError}
+              <select
+                {...register("currentProcess", {
+                  onChange: (event) => {
+                    trackEvent(analyticsEvents.currentProcessSelected, {
+                      locale,
+                      campaign_segment: campaign.segment,
+                      page_path: pathname,
+                      value: event.target.value
+                    });
+                  }
+                })}
+                aria-describedby={fieldDescription(
+                  "currentProcess",
+                  errors.currentProcess
+                )}
+                aria-invalid={Boolean(errors.currentProcess)}
+                className={inputClassName}
+                id="currentProcess"
+              >
+                {currentProcessOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {t(`options.currentProcess.${option}`)}
+                  </option>
+                ))}
+              </select>
+            </FormField>
+
+            <FormField
+              error={errors.monthlyFollowUps}
+              label={t("fields.monthlyFollowUps.label")}
+              name="monthlyFollowUps"
+            >
+              <select
+                {...register("monthlyFollowUps")}
+                aria-describedby={fieldDescription(
+                  "monthlyFollowUps",
+                  errors.monthlyFollowUps
+                )}
+                aria-invalid={Boolean(errors.monthlyFollowUps)}
+                className={inputClassName}
+                id="monthlyFollowUps"
+              >
+                {monthlyFollowUpOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {t(`options.monthlyFollowUps.${option}`)}
+                  </option>
+                ))}
+              </select>
+            </FormField>
+
+            <FormField
+              className="sm:col-span-2"
+              error={errors.biggestPain}
+              label={t("fields.biggestPain.label")}
+              name="biggestPain"
+            >
+              <textarea
+                {...register("biggestPain")}
+                aria-describedby={fieldDescription("biggestPain", errors.biggestPain)}
+                aria-invalid={Boolean(errors.biggestPain)}
+                className={`${inputClassName} min-h-[88px] resize-y py-2.5`}
+                id="biggestPain"
+                placeholder={t("fields.biggestPain.placeholder")}
+                rows={3}
+              />
+            </FormField>
+
+            <div className="absolute top-auto left-[-10000px] h-px w-px overflow-hidden">
+              <input
+                {...register("honeypot")}
+                aria-label={t("fields.honeypot.label")}
+                autoComplete="off"
+                id="companyWebsite"
+                tabIndex={-1}
+                type="text"
+              />
+            </div>
+
+            <div className="sm:col-span-2">
+              <label className="flex items-start gap-2.5 text-sm leading-5 text-foreground-muted">
+                <input
+                  {...register("privacyConsent")}
+                  aria-describedby={fieldDescription(
+                    "privacyConsent",
+                    errors.privacyConsent
+                  )}
+                  aria-invalid={Boolean(errors.privacyConsent)}
+                  className="focus-ring mt-0.5 size-4 rounded border-input"
+                  type="checkbox"
+                />
+                <span>{t("fields.privacyConsent.label")}</span>
+              </label>
+              <FieldErrorMessage error={errors.privacyConsent} name="privacyConsent" />
+            </div>
+
+            <input type="hidden" {...register("campaignSegment")} />
+            <input type="hidden" {...register("locale")} />
+
+            {submitError ? (
+              <p
+                aria-live="assertive"
+                className="rounded-md border border-destructive/25 bg-surface px-3 py-2.5 text-sm font-semibold text-destructive sm:col-span-2"
+                role="alert"
+              >
+                {submitError}
+              </p>
+            ) : null}
+
+            <Button
+              aria-busy={submissionPhase === "submitting"}
+              className="w-full sm:col-span-2"
+              disabled={isSubmitting || submissionPhase === "submitting"}
+              size="lg"
+              type="submit"
+            >
+              {isSubmitting ? <Loader2 aria-hidden="true" className="animate-spin" /> : null}
+              {t("submit")}
+            </Button>
+
+            <p className="text-xs leading-5 text-foreground-muted sm:col-span-2">
+              {t("privacyPrefix")}{" "}
+              <Link
+                className="font-semibold text-primary underline-offset-4 hover:underline"
+                href="/privacy"
+              >
+                {t("privacyLink")}
+              </Link>
+              .
             </p>
-          ) : null}
-
-          <Button
-            aria-busy={submissionPhase === "submitting"}
-            className="w-full md:col-span-2"
-            disabled={isSubmitting || submissionPhase === "submitting"}
-            size="lg"
-            type="submit"
-          >
-            {isSubmitting ? <Loader2 aria-hidden="true" className="animate-spin" /> : null}
-            {t("submit")}
-          </Button>
-
-          <p className="text-sm leading-6 text-foreground-muted md:col-span-2">
-            {t("privacyPrefix")}{" "}
-            <Link className="font-semibold text-primary underline-offset-4 hover:underline" href="/privacy">
-              {t("privacyLink")}
-            </Link>
-            .
-          </p>
           </form>
         </div>
       </Container>
@@ -516,7 +595,6 @@ function PilotSuccess({
 }) {
   const t = useTranslations("landing.pilotForm.success");
   const pathname = usePathname();
-  const [selectedBudget, setSelectedBudget] = useState<string | null>(null);
   const calendarUrl = buildCalendarUrl({
     email,
     locale,
@@ -525,79 +603,35 @@ function PilotSuccess({
   });
 
   useEffect(() => {
-    trackEvent(analyticsEvents.pricingQuestionViewed, {
-      locale,
-      campaign_segment: campaign.segment,
-      page_path: pathname
-    });
-
     document.getElementById("pilot-form")?.scrollIntoView({
       behavior: "smooth",
       block: "start"
     });
-  }, [campaign.segment, locale, pathname]);
-
-  function selectBudget(option: (typeof budgetOptionKeys)[number]) {
-    setSelectedBudget(option);
-    trackEvent(analyticsEvents.pricingQuestionAnswered, {
-      locale,
-      campaign_segment: campaign.segment,
-      page_path: pathname,
-      value: t(`budget.options.${option}`)
-    });
-  }
+  }, []);
 
   return (
     <section
       aria-labelledby="pilot-form-heading"
       aria-live="polite"
-      className="scroll-mt-28 bg-surface py-16 md:py-24"
+      className="scroll-mt-28 bg-surface py-12 md:py-16"
       id="pilot-form"
       role="status"
     >
       <Container className="max-w-[54rem]">
-        <div className="rounded-lg border border-primary/20 bg-primary-subtle p-6 shadow-card md:p-8">
-          <p className="text-sm font-semibold tracking-[0.08em] text-primary uppercase">
+        <div className="rounded-lg border border-primary/20 bg-primary-subtle p-5 shadow-card md:p-7">
+          <p className="text-xs font-semibold tracking-[0.08em] text-primary uppercase">
             {t("eyebrow")}
           </p>
           <h2
-            className="mt-4 text-3xl leading-[1.08] font-semibold text-foreground md:text-5xl"
+            className="mt-3 text-2xl leading-tight font-semibold text-foreground md:text-4xl"
             id="pilot-form-heading"
           >
             {t("title")}
           </h2>
-          <p className="mt-5 max-w-[62ch] text-base leading-7 text-foreground-muted">
+          <p className="mt-3 max-w-[62ch] text-sm leading-6 text-foreground-muted md:text-base md:leading-7">
             {t("copy")}
           </p>
-          <div className="mt-7 rounded-lg border border-primary/15 bg-surface/72 p-4">
-            <h3 className="text-base font-semibold text-foreground">
-              {t("budget.title")}
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-foreground-muted">
-              {t("budget.copy")}
-            </p>
-            <div className="mt-4 grid gap-2 sm:grid-cols-2">
-              {budgetOptionKeys.map((option) => (
-                <button
-                  aria-pressed={selectedBudget === option}
-                  className={`focus-ring rounded-md border px-3 py-2 text-left text-sm font-semibold transition ${
-                    selectedBudget === option
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border bg-background text-foreground hover:border-primary/50"
-                  }`}
-                  key={option}
-                  onClick={() => selectBudget(option)}
-                  type="button"
-                >
-                  {t(`budget.options.${option}`)}
-                </button>
-              ))}
-            </div>
-            <p className="mt-3 text-xs leading-5 text-foreground-muted">
-              {t("budget.note")}
-            </p>
-          </div>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">
             <Button asChild size="lg">
               <a
                 href={calendarUrl}
@@ -639,7 +673,7 @@ function FormField({
   name: Path<FormValues>;
 }) {
   return (
-    <div className={`grid gap-2 ${className ?? ""}`}>
+    <div className={`grid gap-1.5 ${className ?? ""}`}>
       <label className="text-sm font-semibold text-foreground" htmlFor={name}>
         {label}
       </label>
@@ -661,7 +695,7 @@ function FieldErrorMessage({
   }
 
   return (
-    <p className="text-sm font-semibold text-destructive" id={`${name}-error`}>
+    <p className="text-xs font-semibold text-destructive" id={`${name}-error`}>
       {error.message}
     </p>
   );
@@ -698,7 +732,7 @@ function createLeadFormSchema(messages: {
     companyType: z.enum(companyTypeOptions),
     activeVendors: z.enum(activeVendorOptions),
     currentProcess: z.enum(currentProcessOptions),
-    monthlyFollowUps: z.string().trim().max(40).optional(),
+    monthlyFollowUps: z.enum(monthlyFollowUpOptions).optional(),
     biggestPain: z.string().trim().max(800, messages.max800).optional(),
     privacyConsent: z.boolean().refine(Boolean, messages.consent),
     campaignSegment: z.enum(["property-management", "contractors"]),
@@ -708,7 +742,7 @@ function createLeadFormSchema(messages: {
 }
 
 const inputClassName =
-  "focus-ring h-12 w-full rounded-md border border-input bg-surface px-3 text-base text-foreground";
+  "focus-ring h-11 w-full rounded-md border border-input bg-surface px-3 text-sm text-foreground";
 
 function buildCalendarUrl({
   campaign,

@@ -4,6 +4,10 @@ import nodemailer from "nodemailer";
 import { NextResponse, type NextRequest } from "next/server";
 import { z } from "zod";
 
+import {
+  buildLeadEmailHtml,
+  buildLeadEmailText
+} from "@/lib/lead-email-template";
 import { leadSchema } from "@/lib/lead-schema";
 import { checkRateLimit } from "@/lib/rate-limit";
 
@@ -159,33 +163,33 @@ async function sendLeadEmail(payload: Record<string, unknown>) {
     }
   });
 
+  const emailPayload = {
+    firstName: stringValue(payload.firstName),
+    workEmail: stringValue(payload.workEmail, "Unknown") ?? "Unknown",
+    company: stringValue(payload.company, "Unknown") ?? "Unknown",
+    role: stringValue(payload.role),
+    companyType: stringValue(payload.companyType, "Unknown") ?? "Unknown",
+    activeVendors: stringValue(payload.activeVendors, "Unknown") ?? "Unknown",
+    currentProcess: stringValue(payload.currentProcess, "Unknown") ?? "Unknown",
+    monthlyFollowUps: stringValue(payload.monthlyFollowUps),
+    biggestPain: stringValue(payload.biggestPain),
+    campaignSegment: stringValue(payload.campaignSegment, "Unknown") ?? "Unknown",
+    locale: stringValue(payload.locale, "Unknown") ?? "Unknown",
+    source: stringValue(payload.source),
+    referrer: stringValue(payload.referrer),
+    receivedAt: stringValue(payload.receivedAt, new Date().toISOString()) ?? new Date().toISOString()
+  };
+
   await transporter.sendMail({
     from: `COI Tracker <${user}>`,
     to: recipient,
-    replyTo: textValue(payload.workEmail),
-    subject: `New COI Tracker lead: ${textValue(payload.company)}`,
-    text: [
-      "New pilot form submission",
-      "",
-      `Name: ${textValue(payload.firstName, "Not provided")}`,
-      `Work email: ${textValue(payload.workEmail)}`,
-      `Company: ${textValue(payload.company)}`,
-      `Role: ${textValue(payload.role, "Not provided")}`,
-      `Company type: ${textValue(payload.companyType)}`,
-      `Active vendors: ${textValue(payload.activeVendors)}`,
-      `Current process: ${textValue(payload.currentProcess)}`,
-      `Monthly follow-ups: ${textValue(payload.monthlyFollowUps, "Not provided")}`,
-      `Biggest pain: ${textValue(payload.biggestPain, "Not provided")}`,
-      "",
-      `Campaign: ${textValue(payload.campaignSegment)}`,
-      `Locale: ${textValue(payload.locale)}`,
-      `Source: ${textValue(payload.source, "Not provided")}`,
-      `Referrer: ${textValue(payload.referrer, "Not provided")}`,
-      `Received at: ${textValue(payload.receivedAt)}`
-    ].join("\n")
+    replyTo: emailPayload.workEmail,
+    subject: `New COI Tracker lead: ${emailPayload.company}`,
+    text: buildLeadEmailText(emailPayload),
+    html: buildLeadEmailHtml(emailPayload)
   });
 }
 
-function textValue(value: unknown, fallback = "Unknown") {
-  return typeof value === "string" && value.trim() ? value : fallback;
+function stringValue(value: unknown, fallback?: string) {
+  return typeof value === "string" && value.trim() ? value.trim() : fallback;
 }

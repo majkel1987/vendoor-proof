@@ -18,7 +18,9 @@ export const leadSchema = z.object({
     "Existing software",
     "Other"
   ]),
-  monthlyFollowUps: z.string().trim().max(40).optional(),
+  monthlyFollowUps: z
+    .enum(["1-10", "11-25", "26-50", "50+", "Not sure"])
+    .optional(),
   biggestPain: z.string().trim().max(800).optional(),
   privacyConsent: z.literal(true),
   campaignSegment: z.enum(["property-management", "contractors"]),

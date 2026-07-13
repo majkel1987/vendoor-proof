@@ -677,21 +677,9 @@
       "success": {
         "eyebrow": "Zgłoszenie odebrane",
         "title": "Dziękujemy — mamy Twoje zgłoszenie do pilota.",
-        "copy": "Przejrzymy informacje o workflow i odezwiemy się e-mailem. Możesz też pomóc nam skalibrować cennik jedną opcjonalną odpowiedzią poniżej.",
+        "copy": "Przejrzymy informacje o workflow i odezwiemy się e-mailem. Możesz też umówić krótką rozmowę poniżej, jeśli chcesz omówić proces na żywo.",
         "calendarCta": "Umów 20-minutową rozmowę o workflow",
-        "productCta": "Zobacz pierwszy workflow",
-        "budget": {
-          "title": "Jaki miesięczny budżet byłby realistyczny dla takiego workflow?",
-          "copy": "Opcjonalne pytanie badawcze. Odpowiedź pomaga nam zrozumieć dopasowanie; to nie jest ostateczna cena ani oferta.",
-          "note": "To nie wpływa na status Twojego zgłoszenia do pilota.",
-          "options": {
-            "under100": "Poniżej 100 USD / mies.",
-            "100to249": "100–249 USD / mies.",
-            "250to499": "250–499 USD / mies.",
-            "500to999": "500–999 USD / mies.",
-            "1000plus": "1 000+ USD / mies."
-          }
-        }
+        "productCta": "Zobacz pierwszy workflow"
       }
     }
   },

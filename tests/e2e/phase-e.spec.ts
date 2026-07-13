@@ -61,14 +61,8 @@ test("EN property hero CTA validates the pilot form and reaches success", async 
     })
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", {
-      name: "What monthly budget would feel realistic for this workflow?"
-    })
+    page.getByRole("link", { name: "Book a 20-minute workflow call" })
   ).toBeVisible();
-  await page.getByRole("button", { name: "$250-499 / month" }).click();
-  await expect(
-    page.getByRole("button", { name: "$250-499 / month" })
-  ).toHaveAttribute("aria-pressed", "true");
 });
 
 test("mobile contractor navigation switches to PL and preserves segment", async ({

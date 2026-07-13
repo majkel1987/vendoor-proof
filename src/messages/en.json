@@ -677,21 +677,9 @@
       "success": {
         "eyebrow": "Request received",
         "title": "Thanks — we received your pilot application.",
-        "copy": "We will review your workflow details and follow up by email. You can also help us calibrate pricing with one optional answer below.",
+        "copy": "We will review your workflow details and follow up by email. You can also book a short call below if you want to walk through your process live.",
         "calendarCta": "Book a 20-minute workflow call",
-        "productCta": "See the first workflow",
-        "budget": {
-          "title": "What monthly budget would feel realistic for this workflow?",
-          "copy": "Optional research question. Your answer helps us understand fit; it is not a final price or offer.",
-          "note": "This will not affect the status of your pilot application.",
-          "options": {
-            "under100": "Under $100 / month",
-            "100to249": "$100-249 / month",
-            "250to499": "$250-499 / month",
-            "500to999": "$500-999 / month",
-            "1000plus": "$1,000+ / month"
-          }
-        }
+        "productCta": "See the first workflow"
       }
     }
   },
