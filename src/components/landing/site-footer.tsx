@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 
 import { PrivacyRouteLink } from "@/components/legal/privacy-route-link";
+import { TermsRouteLink } from "@/components/legal/terms-route-link";
 import { Container } from "@/components/shared/container";
 import { BrandLogo } from "@/components/shared/brand-logo";
 import { campaigns } from "@/config/landing-campaigns";
@@ -85,7 +86,13 @@ export async function SiteFooter({ segment }: SiteFooterProps) {
                   className="size-3.5 opacity-0 transition-[opacity,transform] duration-200 group-hover:translate-x-px group-hover:-translate-y-px group-hover:opacity-100"
                 />
               </PrivacyRouteLink>
-              <FooterLink href="/terms">{t("links.terms")}</FooterLink>
+              <TermsRouteLink className="focus-ring group text-foreground-muted hover:text-foreground aria-[current=page]:text-primary inline-flex cursor-pointer items-center gap-1 rounded-md text-sm font-semibold transition-[color,transform] duration-200 active:translate-y-px">
+                {t("links.terms")}
+                <ArrowUpRight
+                  aria-hidden="true"
+                  className="size-3.5 opacity-0 transition-[opacity,transform] duration-200 group-hover:translate-x-px group-hover:-translate-y-px group-hover:opacity-100 aria-[current=page]:opacity-70"
+                />
+              </TermsRouteLink>
               <FooterAnchor href="#pilot-form">
                 {t("links.contact")}
               </FooterAnchor>
@@ -139,27 +146,6 @@ function FooterNavGroup({
       </p>
       <div className="grid gap-2.5">{children}</div>
     </nav>
-  );
-}
-
-function FooterLink({
-  children,
-  href,
-}: {
-  children: string;
-  href: "/terms";
-}) {
-  return (
-    <Link
-      className="focus-ring group text-foreground-muted hover:text-foreground inline-flex cursor-pointer items-center gap-1 rounded-md text-sm font-semibold transition-[color,transform] duration-200 active:translate-y-px"
-      href={href}
-    >
-      {children}
-      <ArrowUpRight
-        aria-hidden="true"
-        className="size-3.5 opacity-0 transition-[opacity,transform] duration-200 group-hover:translate-x-px group-hover:-translate-y-px group-hover:opacity-100"
-      />
-    </Link>
   );
 }
 

@@ -1,33 +1,52 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 
-import { Container } from "@/components/shared/container";
+import { termsCopy } from "@/components/legal/terms-copy";
+import { TermsPage } from "@/components/legal/terms-page";
+import { siteConfig } from "@/config/site";
 import type { Locale } from "@/i18n/routing";
+import { localizedPath } from "@/lib/metadata";
 
-type TrustPageProps = {
-  params: Promise<{
-    locale: Locale;
-  }>;
+type TermsPageProps = {
+  params: Promise<{ locale: Locale }>;
 };
 
-export default async function TermsPage({ params }: TrustPageProps) {
+function absoluteTermsUrl(locale: Locale) {
+  return new URL(localizedPath(locale, "/terms"), siteConfig.url).toString();
+}
+
+export async function generateMetadata({
+  params,
+}: TermsPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const text = termsCopy[locale];
+
+  return {
+    metadataBase: new URL(siteConfig.url),
+    title: `${text.title} | ${siteConfig.shortName}`,
+    description: text.description,
+    alternates: {
+      canonical: absoluteTermsUrl(locale),
+      languages: {
+        en: absoluteTermsUrl("en"),
+        pl: absoluteTermsUrl("pl"),
+        "x-default": absoluteTermsUrl("en"),
+      },
+    },
+    openGraph: {
+      description: text.description,
+      locale,
+      siteName: siteConfig.name,
+      title: text.title,
+      type: "website",
+      url: absoluteTermsUrl(locale),
+    },
+  };
+}
+
+export default async function LocalizedTermsPage({ params }: TermsPageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("trustPages.terms");
-  const trustPagesT = await getTranslations("trustPages");
 
-  return (
-    <main id="main-content">
-      <Container className="py-20 md:py-28">
-        <h1 className="text-4xl font-semibold tracking-[-0.01em] text-foreground md:text-6xl">
-          {t("title")}
-        </h1>
-        <p className="mt-6 max-w-[62ch] text-lg leading-8 text-foreground-muted">
-          {t("lead")}
-        </p>
-        <p className="mt-8 max-w-[62ch] rounded-lg border border-border bg-surface p-5 text-sm leading-6 text-foreground-muted">
-          {trustPagesT("legalDisclaimer")}
-        </p>
-      </Container>
-    </main>
-  );
+  return <TermsPage locale={locale} />;
 }

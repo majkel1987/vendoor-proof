@@ -90,6 +90,73 @@ body {
   }
 }
 
+@media print {
+  @page {
+    margin: 18mm;
+  }
+
+  body {
+    background: white;
+  }
+
+  body:has(.legal-document-dialog[open]) > *:not(.legal-document-dialog),
+  .skip-link,
+  [data-sonner-toaster],
+  .legal-document-navigation,
+  .legal-document-actions,
+  .legal-document-close {
+    display: none !important;
+  }
+
+  .legal-document-page,
+  .legal-document-page > div,
+  .legal-document-dialog,
+  .legal-document-dialog[open],
+  .legal-document-dialog > div,
+  .legal-document-body {
+    position: static !important;
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .legal-document-dialog::backdrop {
+    display: none;
+  }
+
+  .legal-document-header {
+    position: static !important;
+    padding: 0 0 1.5rem !important;
+    border-bottom: 1px solid #d5d9dc !important;
+  }
+
+  .legal-document-page article,
+  .legal-document-dialog article {
+    color: black;
+    font-size: 10pt;
+  }
+
+  .legal-document-page h2,
+  .legal-document-page h3,
+  .legal-document-dialog h2,
+  .legal-document-dialog h3 {
+    break-after: avoid;
+  }
+
+  .legal-document-page table,
+  .legal-document-dialog table {
+    min-width: 0 !important;
+  }
+}
+
 .focus-ring {
   @apply focus-visible:ring-ring focus-visible:ring-offset-background focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none;
 }

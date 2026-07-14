@@ -3,7 +3,7 @@ import "server-only";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-import { validateLegalConfig } from "@/config/legal";
+import { validatePrivacyLegalConfig } from "@/config/legal";
 import type { Locale } from "@/i18n/routing";
 
 const policyFiles = {
@@ -12,7 +12,7 @@ const policyFiles = {
 } as const satisfies Record<Locale, string>;
 
 export function getPrivacyPolicyMarkdown(locale: Locale) {
-  const config = validateLegalConfig();
+  const config = validatePrivacyLegalConfig();
   const source = readFileSync(
     join(process.cwd(), "content", "legal", policyFiles[locale]),
     "utf8",
@@ -24,7 +24,7 @@ export function getPrivacyPolicyMarkdown(locale: Locale) {
     : "";
 
   const replacements: Record<string, string> = {
-    controllerLegalName: config.controllerLegalName,
+    controllerLegalName: config.serviceProviderLegalName,
     privacyEmail: config.privacyEmail,
     vendorListLine,
   };

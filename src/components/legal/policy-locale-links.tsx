@@ -5,9 +5,14 @@ import { cn } from "@/lib/utils";
 type PolicyLocaleLinksProps = {
   locale: Locale;
   label: string;
+  path?: "/privacy" | "/terms";
 };
 
-export function PolicyLocaleLinks({ locale, label }: PolicyLocaleLinksProps) {
+export function PolicyLocaleLinks({
+  locale,
+  label,
+  path = "/privacy",
+}: PolicyLocaleLinksProps) {
   return (
     <nav
       aria-label={label}
@@ -22,7 +27,7 @@ export function PolicyLocaleLinks({ locale, label }: PolicyLocaleLinksProps) {
               ? "bg-primary text-primary-foreground"
               : "text-foreground-muted hover:bg-surface hover:text-foreground",
           )}
-          href="/privacy"
+          href={path}
           key={targetLocale}
           locale={targetLocale}
         >
