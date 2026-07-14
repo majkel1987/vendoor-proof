@@ -290,6 +290,19 @@ body {
   }
 }
 
+@keyframes segment-hint {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateX(0.2rem);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-0.15rem);
+  }
+}
+
 .problem-float-badge {
   will-change: transform;
   animation: problem-badge-float 5.5s ease-in-out infinite;
