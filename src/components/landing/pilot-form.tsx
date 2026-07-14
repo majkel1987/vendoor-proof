@@ -309,6 +309,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
                 className={inputClassName}
                 id="firstName"
                 placeholder={t("fields.firstName.placeholder")}
+                suppressHydrationWarning
                 type="text"
               />
             </FormField>
@@ -336,6 +337,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
                 className={inputClassName}
                 id="workEmail"
                 placeholder={t("fields.workEmail.placeholder")}
+                suppressHydrationWarning
                 type="email"
               />
             </FormField>
@@ -353,6 +355,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
                 className={inputClassName}
                 id="company"
                 placeholder={t("fields.company.placeholder")}
+                suppressHydrationWarning
                 type="text"
               />
             </FormField>
@@ -370,6 +373,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
                 className={inputClassName}
                 id="role"
                 placeholder={t("fields.role.placeholder")}
+                suppressHydrationWarning
                 type="text"
               />
             </FormField>
@@ -394,6 +398,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
                 aria-invalid={Boolean(errors.companyType)}
                 className={inputClassName}
                 id="companyType"
+                suppressHydrationWarning
               >
                 {companyTypeOptions.map((option) => (
                   <option key={option} value={option}>
@@ -426,6 +431,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
                 aria-invalid={Boolean(errors.activeVendors)}
                 className={inputClassName}
                 id="activeVendors"
+                suppressHydrationWarning
               >
                 {activeVendorOptions.map((option) => (
                   <option key={option} value={option}>
@@ -458,6 +464,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
                 aria-invalid={Boolean(errors.currentProcess)}
                 className={inputClassName}
                 id="currentProcess"
+                suppressHydrationWarning
               >
                 {currentProcessOptions.map((option) => (
                   <option key={option} value={option}>
@@ -481,6 +488,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
                 aria-invalid={Boolean(errors.monthlyFollowUps)}
                 className={inputClassName}
                 id="monthlyFollowUps"
+                suppressHydrationWarning
               >
                 {monthlyFollowUpOptions.map((option) => (
                   <option key={option} value={option}>
@@ -504,6 +512,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
                 id="biggestPain"
                 placeholder={t("fields.biggestPain.placeholder")}
                 rows={3}
+                suppressHydrationWarning
               />
             </FormField>
 
@@ -513,6 +522,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
                 aria-label={t("fields.honeypot.label")}
                 autoComplete="off"
                 id="companyWebsite"
+                suppressHydrationWarning
                 tabIndex={-1}
                 type="text"
               />
@@ -528,6 +538,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
                   )}
                   aria-invalid={Boolean(errors.privacyConsent)}
                   className="focus-ring mt-0.5 size-4 rounded border-input"
+                  suppressHydrationWarning
                   type="checkbox"
                 />
                 <span>{t("fields.privacyConsent.label")}</span>
