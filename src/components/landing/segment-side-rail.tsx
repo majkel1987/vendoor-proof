@@ -26,6 +26,7 @@ export function SegmentSideRail({
 }: SegmentSideRailProps) {
   const [open, setOpen] = useState(false);
   const [revealed, setRevealed] = useState(false);
+  const [onDarkSurface, setOnDarkSurface] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
   const listboxId = useId();
   const t = useTranslations("header.segment");
@@ -35,6 +36,30 @@ export function SegmentSideRail({
     segmentNavigation[0];
 
   const isExpanded = revealed || open;
+
+  useEffect(() => {
+    const hero = document.querySelector(".hero-surface");
+    if (!hero) {
+      setOnDarkSurface(false);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setOnDarkSurface(entry.isIntersecting);
+      },
+      {
+        rootMargin: "-4rem 0px 0px 0px",
+        threshold: 0,
+      },
+    );
+
+    observer.observe(hero);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   useEffect(() => {
     if (!open && !revealed) {
@@ -187,13 +212,21 @@ export function SegmentSideRail({
         {!isExpanded ? (
           <ChevronLeft
             aria-hidden="true"
-            className="text-background/75 pointer-events-none absolute top-1/2 right-3.5 size-5 -translate-y-1/2 animate-[segment-hint_2.4s_ease-in-out_infinite] motion-reduce:animate-none"
+            className={cn(
+              "pointer-events-none absolute top-1/2 right-3.5 size-5 -translate-y-1/2 animate-[segment-hint_2.4s_ease-in-out_infinite] motion-reduce:animate-none",
+              onDarkSurface
+                ? "text-background/75"
+                : "text-foreground/55 drop-shadow-[0_0_1px_rgb(255_255_255/0.85)]",
+            )}
           />
         ) : null}
 
         <button
           aria-label={t("label")}
-          className="bg-foreground focus-ring relative z-10 h-16 w-2.5 shrink-0 rounded-l-full shadow-[-4px_0_16px_-6px_rgb(9_33_29/0.35)]"
+          className={cn(
+            "bg-foreground focus-ring relative z-10 h-16 w-2.5 shrink-0 rounded-l-full shadow-[-4px_0_16px_-6px_rgb(9_33_29/0.35)]",
+            !onDarkSurface && "ring-primary/20 ring-1 ring-inset",
+          )}
           onClick={handleTabClick}
           type="button"
         />
