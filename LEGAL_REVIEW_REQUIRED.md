@@ -5,9 +5,7 @@ The privacy-policy implementation is technically complete, but the following own
 ## Blocks production publication
 
 - Full legal name of the controller (`LEGAL_CONTROLLER_NAME`).
-- Registered or business address (`LEGAL_REGISTERED_ADDRESS`).
-- Registration or VAT number (`LEGAL_REGISTRATION_NUMBER`).
-- Public privacy email and general contact email (`LEGAL_PRIVACY_EMAIL`, `LEGAL_CONTACT_EMAIL`).
+- Public privacy and contact email (`LEGAL_PRIVACY_EMAIL`).
 
 The build validation deliberately fails when any of these values is missing.
 

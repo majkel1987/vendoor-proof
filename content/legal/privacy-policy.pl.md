@@ -28,10 +28,7 @@ Korzystanie ze strony nie oznacza zgody na każdy sposób przetwarzania. Jeżeli
 Administratorem jest:
 
 **{{controllerLegalName}}**\
-Adres: **{{registeredAddress}}**\
-Numer rejestrowy lub NIP: **{{registrationOrVatNumber}}**\
-E-mail do spraw prywatności: **[{{privacyEmail}}](mailto:{{privacyEmail}})**\
-E-mail kontaktowy: **[{{contactEmail}}](mailto:{{contactEmail}})**
+E-mail kontaktowy i do spraw prywatności: **[{{privacyEmail}}](mailto:{{privacyEmail}})**
 
 W dalszej części Polityki administrator jest określany jako "VendoorProof", "my" lub "Administrator".
 
@@ -146,8 +143,6 @@ Możemy aktualizować Politykę, gdy zmienia się strona, dostawcy, prawo lub sp
 
 ## 18. Kontakt
 
-Pytania o prywatność i realizację praw: [{{privacyEmail}}](mailto:{{privacyEmail}})\
-Kontakt ogólny: [{{contactEmail}}](mailto:{{contactEmail}})
+Pytania o prywatność, realizację praw i kontakt ogólny: [{{privacyEmail}}](mailto:{{privacyEmail}})
 
-**{{controllerLegalName}}**\
-**{{registeredAddress}}**
+**{{controllerLegalName}}**

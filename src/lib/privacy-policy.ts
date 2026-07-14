@@ -25,10 +25,7 @@ export function getPrivacyPolicyMarkdown(locale: Locale) {
 
   const replacements: Record<string, string> = {
     controllerLegalName: config.controllerLegalName,
-    registeredAddress: config.registeredAddress,
-    registrationOrVatNumber: config.registrationOrVatNumber,
     privacyEmail: config.privacyEmail,
-    contactEmail: config.contactEmail,
     vendorListLine,
   };
 

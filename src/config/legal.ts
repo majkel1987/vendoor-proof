@@ -2,10 +2,7 @@ import "server-only";
 
 export type LegalConfig = {
   controllerLegalName: string;
-  registeredAddress: string;
-  registrationOrVatNumber: string;
   privacyEmail: string;
-  contactEmail: string;
   dpoDetails: string | null;
   vendorOrSubprocessorListUrl: string | null;
   backupRetentionDays: number | null;
@@ -14,10 +11,7 @@ export type LegalConfig = {
 
 export const legalConfig: LegalConfig = {
   controllerLegalName: process.env.LEGAL_CONTROLLER_NAME?.trim() ?? "",
-  registeredAddress: process.env.LEGAL_REGISTERED_ADDRESS?.trim() ?? "",
-  registrationOrVatNumber: process.env.LEGAL_REGISTRATION_NUMBER?.trim() ?? "",
   privacyEmail: process.env.LEGAL_PRIVACY_EMAIL?.trim() ?? "",
-  contactEmail: process.env.LEGAL_CONTACT_EMAIL?.trim() ?? "",
   dpoDetails: process.env.LEGAL_DPO_DETAILS?.trim() || null,
   vendorOrSubprocessorListUrl:
     process.env.LEGAL_VENDOR_LIST_URL?.trim() || null,
@@ -27,10 +21,7 @@ export const legalConfig: LegalConfig = {
 
 const requiredFields = [
   "controllerLegalName",
-  "registeredAddress",
-  "registrationOrVatNumber",
   "privacyEmail",
-  "contactEmail",
 ] as const satisfies ReadonlyArray<keyof LegalConfig>;
 
 export function validateLegalConfig(config: LegalConfig = legalConfig) {

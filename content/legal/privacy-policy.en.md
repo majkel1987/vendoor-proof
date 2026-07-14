@@ -28,10 +28,7 @@ Using the website is not consent to every form of processing. Where consent is r
 The controller is:
 
 **{{controllerLegalName}}**\
-Address: **{{registeredAddress}}**\
-Registration or VAT number: **{{registrationOrVatNumber}}**\
-Privacy email: **[{{privacyEmail}}](mailto:{{privacyEmail}})**\
-General contact email: **[{{contactEmail}}](mailto:{{contactEmail}})**
+General and privacy contact email: **[{{privacyEmail}}](mailto:{{privacyEmail}})**
 
 In this Policy, the controller is referred to as "VendoorProof", "we", "us" or the "Controller".
 
@@ -146,8 +143,6 @@ We may update this Policy when the website, providers, law or processing practic
 
 ## 18. Contact
 
-Privacy questions and rights requests: [{{privacyEmail}}](mailto:{{privacyEmail}})\
-General contact: [{{contactEmail}}](mailto:{{contactEmail}})
+Privacy questions, rights requests and general contact: [{{privacyEmail}}](mailto:{{privacyEmail}})
 
-**{{controllerLegalName}}**\
-**{{registeredAddress}}**
+**{{controllerLegalName}}**
