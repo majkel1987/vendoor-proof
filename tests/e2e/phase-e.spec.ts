@@ -5,7 +5,7 @@ const routes = [
   "/property-management",
   "/contractors",
   "/pl/property-management",
-  "/pl/contractors"
+  "/pl/contractors",
 ];
 
 for (const route of routes) {
@@ -19,19 +19,19 @@ for (const route of routes) {
     await expect(page.locator("link[hreflang='pl']")).toHaveCount(1);
     await expect(page.locator("link[hreflang='x-default']")).toHaveCount(1);
     await expect(
-      page.getByText(/does not provide legal|nie zapewnia porad prawnych/i)
+      page.getByText(/does not provide legal|nie zapewnia porad prawnych/i),
     ).toBeVisible();
   });
 }
 
 test("EN property hero CTA validates the pilot form and reaches success", async ({
-  page
+  page,
 }) => {
   await page.route("**/api/lead", async (route) => {
     await route.fulfill({
       body: JSON.stringify({ ok: true }),
       contentType: "application/json",
-      status: 200
+      status: 200,
     });
   });
 
@@ -52,21 +52,23 @@ test("EN property hero CTA validates the pilot form and reaches success", async 
 
   await workEmail.fill("alex@northline.example");
   await form.locator("#company").fill("Northline Property Group");
-  await form.getByLabel("I agree to be contacted regarding early access").check();
+  await form
+    .getByLabel("I agree to be contacted regarding early access")
+    .check();
   await form.getByRole("button", { name: "Join early access" }).click();
 
   await expect(
     page.getByRole("heading", {
-      name: "Thanks — we received your pilot application."
-    })
+      name: "Thanks — we received your pilot application.",
+    }),
   ).toBeVisible();
   await expect(
-    page.getByText("The product is currently in active development.")
+    page.getByText("The product is currently in active development."),
   ).toBeVisible();
 });
 
 test("mobile contractor navigation switches to PL and preserves segment", async ({
-  page
+  page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/contractors");
@@ -80,26 +82,26 @@ test("mobile contractor navigation switches to PL and preserves segment", async 
   await page
     .locator("main section")
     .first()
-    .getByRole("link", { name: "Zgłoś firmę do wczesnego dostępu" })
+    .getByRole("link", { name: "Dołącz do wczesnego dostępu" })
     .click();
-  await expect(page.getByLabel("Sluzbowy adres email")).toBeFocused();
+  await expect(page.getByLabel("Służbowy adres email")).toBeFocused();
 });
 
 test("PL property FAQ supports keyboard operation and emits FAQPage JSON-LD", async ({
-  page
+  page,
 }) => {
   await page.goto("/pl/property-management");
 
   const faqButton = page.getByRole("button", {
-    name: /Czy system sam przypomina vendorom/
+    name: /Czy system sam przypomina dostawcom/,
   });
   await faqButton.focus();
   await expect(faqButton).toBeFocused();
   await page.keyboard.press("Enter");
   await expect(
     page.getByRole("region", {
-      name: /Czy system sam przypomina vendorom/
-    })
+      name: /Czy system sam przypomina dostawcom/,
+    }),
   ).toBeVisible();
 
   const faqJsonLd = await page
@@ -107,19 +109,21 @@ test("PL property FAQ supports keyboard operation and emits FAQPage JSON-LD", as
     .evaluateAll((scripts) =>
       scripts
         .map((script) => script.textContent ?? "")
-        .some((content) => content.includes('"@type":"FAQPage"'))
+        .some((content) => content.includes('"@type":"FAQPage"')),
     );
   expect(faqJsonLd).toBe(true);
 });
 
 test("mobile 375px has no horizontal overflow and keeps CTA usable", async ({
-  page
+  page,
 }) => {
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto("/property-management");
 
   const hasNoOverflow = await page.evaluate(
-    () => document.documentElement.scrollWidth <= document.documentElement.clientWidth
+    () =>
+      document.documentElement.scrollWidth <=
+      document.documentElement.clientWidth,
   );
   expect(hasNoOverflow).toBe(true);
 
@@ -132,24 +136,24 @@ test("mobile 375px has no horizontal overflow and keeps CTA usable", async ({
   await expect(page.getByLabel("Work email")).toBeFocused();
 });
 
-test("prefers-reduced-motion disables pulse and reveal entry styles", async ({
-  page
+test("prefers-reduced-motion disables floating and reveal entry styles", async ({
+  page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/property-management");
 
-  const pulseAnimation = await page
-    .locator(".workflow-status-pulse")
+  const floatingBadgeAnimation = await page
+    .locator(".problem-float-badge")
     .first()
     .evaluate((element) => getComputedStyle(element).animationName);
-  expect(pulseAnimation).toBe("none");
+  expect(floatingBadgeAnimation).toBe("none");
 
   const revealStyle = await page
     .locator("[data-motion-reveal]")
     .first()
     .evaluate((element) => ({
       opacity: getComputedStyle(element).opacity,
-      transform: getComputedStyle(element).transform
+      transform: getComputedStyle(element).transform,
     }));
   expect(revealStyle).toEqual({ opacity: "1", transform: "none" });
 });

@@ -9,7 +9,7 @@ import {
   useForm,
   type FieldError,
   type Path,
-  type Resolver
+  type Resolver,
 } from "react-hook-form";
 import { z } from "zod";
 
@@ -48,7 +48,7 @@ const companyTypeOptions = [
   "Property management",
   "General contractor",
   "Facilities",
-  "Other"
+  "Other",
 ] as const;
 
 const activeVendorOptions = ["1-25", "26-100", "101-250", "250+"] as const;
@@ -57,7 +57,7 @@ const currentProcessOptions = [
   "Spreadsheet",
   "Shared drive",
   "Existing software",
-  "Other"
+  "Other",
 ] as const;
 
 const monthlyFollowUpOptions = [
@@ -65,14 +65,14 @@ const monthlyFollowUpOptions = [
   "11-25",
   "26-50",
   "50+",
-  "Not sure"
+  "Not sure",
 ] as const;
 
 const formPanelItems = [
   "statusView",
   "manualFollowUp",
   "vendorUpload",
-  "auditTrail"
+  "auditTrail",
 ] as const;
 
 export function PilotForm({ campaign }: PilotFormProps) {
@@ -82,7 +82,8 @@ export function PilotForm({ campaign }: PilotFormProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const startedTracked = useRef(false);
-  const [submissionPhase, setSubmissionPhase] = useState<SubmissionPhase>("idle");
+  const [submissionPhase, setSubmissionPhase] =
+    useState<SubmissionPhase>("idle");
   const [successEmail, setSuccessEmail] = useState<string | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const schema = createLeadFormSchema({
@@ -93,14 +94,14 @@ export function PilotForm({ campaign }: PilotFormProps) {
     max100: t("errors.max100"),
     max120: t("errors.max120"),
     max800: t("errors.max800"),
-    consent: t("errors.consent")
+    consent: t("errors.consent"),
   });
 
   const {
     formState: { errors, isSubmitting },
     handleSubmit,
     register,
-    watch
+    watch,
   } = useForm<FormValues>({
     resolver: zodResolver(schema) as Resolver<FormValues>,
     mode: "onBlur",
@@ -117,8 +118,8 @@ export function PilotForm({ campaign }: PilotFormProps) {
       privacyConsent: false,
       honeypot: "",
       campaignSegment: campaign.segment,
-      locale
-    }
+      locale,
+    },
   });
 
   const workEmail = watch("workEmail");
@@ -132,7 +133,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
     trackEvent(analyticsEvents.pilotFormStarted, {
       locale,
       campaign_segment: campaign.segment,
-      page_path: pathname
+      page_path: pathname,
     });
   }
 
@@ -151,7 +152,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
       const response = await fetch("/api/lead", {
         method: "POST",
         headers: {
-          "content-type": "application/json"
+          "content-type": "application/json",
         },
         body: JSON.stringify({
           ...values,
@@ -161,8 +162,8 @@ export function PilotForm({ campaign }: PilotFormProps) {
           utmMedium: searchParams.get("utm_medium") ?? undefined,
           utmCampaign: searchParams.get("utm_campaign") ?? undefined,
           utmContent: searchParams.get("utm_content") ?? undefined,
-          utmTerm: searchParams.get("utm_term") ?? undefined
-        })
+          utmTerm: searchParams.get("utm_term") ?? undefined,
+        }),
       });
 
       let payload: { ok?: boolean } | null = null;
@@ -180,7 +181,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
           locale,
           campaign_segment: campaign.segment,
           page_path: pathname,
-          status: response.ok ? "invalid_response" : response.status
+          status: response.ok ? "invalid_response" : response.status,
         });
         return;
       }
@@ -188,7 +189,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
       trackEvent(analyticsEvents.pilotFormSubmitted, {
         locale,
         campaign_segment: campaign.segment,
-        page_path: pathname
+        page_path: pathname,
       });
       setSuccessEmail(values.workEmail);
       setSubmissionPhase("success");
@@ -199,7 +200,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
         locale,
         campaign_segment: campaign.segment,
         page_path: pathname,
-        status: "network_error"
+        status: "network_error",
       });
     }
   }
@@ -211,7 +212,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
       locale,
       campaign_segment: campaign.segment,
       page_path: pathname,
-      status: "client_validation"
+      status: "client_validation",
     });
   }
 
@@ -222,36 +223,36 @@ export function PilotForm({ campaign }: PilotFormProps) {
   return (
     <section
       aria-labelledby="pilot-form-heading"
-      className="border-border scroll-mt-28 border-b bg-surface py-12 md:py-16"
+      className="section-shell border-border bg-surface scroll-mt-28 border-b"
       id="pilot-form"
     >
       <Container className="max-w-[88rem]">
         <div className="grid gap-5 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] lg:items-stretch lg:gap-6">
-          <aside className="relative overflow-hidden rounded-lg border border-primary/20 bg-primary-subtle p-5 shadow-card md:p-7 lg:p-8">
+          <aside className="border-primary/20 bg-primary-subtle shadow-card relative overflow-hidden rounded-lg border p-5 md:p-7 lg:p-8">
             <div
               aria-hidden="true"
-              className="absolute -right-20 -bottom-24 size-72 rounded-full bg-primary/10 blur-3xl"
+              className="bg-primary/10 absolute -right-20 -bottom-24 size-72 rounded-full blur-3xl"
             />
             <div
               aria-hidden="true"
-              className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-primary/35 via-white/70 to-transparent"
+              className="from-primary/35 absolute top-0 left-0 h-px w-full bg-gradient-to-r via-white/70 to-transparent"
             />
             <div className="relative z-10 flex h-full flex-col">
-              <div className="flex size-11 items-center justify-center rounded-md bg-surface text-primary shadow-card">
+              <div className="bg-surface text-primary shadow-card flex size-11 items-center justify-center rounded-md">
                 <CalendarDays aria-hidden="true" className="size-5" />
               </div>
-              <p className="mt-6 text-xs leading-5 font-bold tracking-[0.1em] text-primary uppercase">
+              <p className="text-primary mt-6 text-xs leading-5 font-bold tracking-[0.1em] uppercase">
                 {offerT("title")}
               </p>
-              <h2 className="mt-2 text-2xl leading-tight font-semibold text-foreground text-balance md:text-3xl">
+              <h2 className="text-foreground mt-2 text-2xl leading-tight font-semibold text-balance md:text-3xl">
                 {offerT("cta.title")}
               </h2>
-              <p className="mt-3 max-w-[38rem] text-sm leading-6 text-foreground-muted">
+              <p className="text-foreground-muted mt-3 max-w-[38rem] text-sm leading-6">
                 {offerT("cta.copy")}
               </p>
 
-              <div className="mt-6 rounded-lg border border-primary/15 bg-surface/72 p-3.5">
-                <h3 className="text-sm font-semibold text-foreground">
+              <div className="border-primary/15 bg-surface/72 mt-6 rounded-lg border p-3.5">
+                <h3 className="text-foreground text-sm font-semibold">
                   {offerT("scope.title")}
                 </h3>
                 <ul className="mt-3 grid gap-2.5">
@@ -259,7 +260,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
                     <li className="flex gap-2.5 text-sm leading-5" key={item}>
                       <CheckCircle2
                         aria-hidden="true"
-                        className="mt-0.5 size-4 shrink-0 text-primary"
+                        className="text-primary mt-0.5 size-4 shrink-0"
                       />
                       <span className="text-foreground-muted">
                         {offerT(`scope.items.${item}`)}
@@ -269,14 +270,14 @@ export function PilotForm({ campaign }: PilotFormProps) {
                 </ul>
               </div>
 
-              <p className="mt-auto pt-6 text-sm leading-5 font-semibold text-foreground-muted">
+              <p className="text-foreground-muted mt-auto pt-6 text-sm leading-5 font-semibold">
                 {offerT("cta.microcopy")}
               </p>
             </div>
           </aside>
 
           <form
-            className="grid gap-3 rounded-lg border border-border bg-background p-4 shadow-card sm:grid-cols-2 md:gap-3.5 md:p-5 lg:p-6"
+            className="border-border bg-background shadow-card grid gap-3 rounded-lg border p-4 sm:grid-cols-2 md:gap-3.5 md:p-5 lg:p-6"
             noValidate
             onFocusCapture={() => {
               handleFormInteraction();
@@ -286,12 +287,12 @@ export function PilotForm({ campaign }: PilotFormProps) {
           >
             <div className="sm:col-span-2">
               <h2
-                className="text-2xl leading-tight font-semibold text-foreground md:text-3xl"
+                className="text-foreground text-2xl leading-tight font-semibold md:text-3xl"
                 id="pilot-form-heading"
               >
                 {t("title")}
               </h2>
-              <p className="mt-2 max-w-[62ch] text-sm leading-6 text-foreground-muted">
+              <p className="text-foreground-muted mt-2 max-w-[62ch] text-sm leading-6">
                 {t("lead")}
               </p>
             </div>
@@ -303,7 +304,10 @@ export function PilotForm({ campaign }: PilotFormProps) {
             >
               <input
                 {...register("firstName")}
-                aria-describedby={fieldDescription("firstName", errors.firstName)}
+                aria-describedby={fieldDescription(
+                  "firstName",
+                  errors.firstName,
+                )}
                 aria-invalid={Boolean(errors.firstName)}
                 autoComplete="given-name"
                 className={inputClassName}
@@ -326,15 +330,19 @@ export function PilotForm({ campaign }: PilotFormProps) {
                       trackEvent(analyticsEvents.leadEmailEntered, {
                         locale,
                         campaign_segment: campaign.segment,
-                        page_path: pathname
+                        page_path: pathname,
                       });
                     }
-                  }
+                  },
                 })}
-                aria-describedby={fieldDescription("workEmail", errors.workEmail)}
+                aria-describedby={fieldDescription(
+                  "workEmail",
+                  errors.workEmail,
+                )}
                 aria-invalid={Boolean(errors.workEmail)}
                 autoComplete="email"
                 className={inputClassName}
+                data-anchor-focus
                 id="workEmail"
                 placeholder={t("fields.workEmail.placeholder")}
                 suppressHydrationWarning
@@ -390,11 +398,14 @@ export function PilotForm({ campaign }: PilotFormProps) {
                       locale,
                       campaign_segment: campaign.segment,
                       page_path: pathname,
-                      value: event.target.value
+                      value: event.target.value,
                     });
-                  }
+                  },
                 })}
-                aria-describedby={fieldDescription("companyType", errors.companyType)}
+                aria-describedby={fieldDescription(
+                  "companyType",
+                  errors.companyType,
+                )}
                 aria-invalid={Boolean(errors.companyType)}
                 className={inputClassName}
                 id="companyType"
@@ -420,13 +431,13 @@ export function PilotForm({ campaign }: PilotFormProps) {
                       locale,
                       campaign_segment: campaign.segment,
                       page_path: pathname,
-                      value: event.target.value
+                      value: event.target.value,
                     });
-                  }
+                  },
                 })}
                 aria-describedby={fieldDescription(
                   "activeVendors",
-                  errors.activeVendors
+                  errors.activeVendors,
                 )}
                 aria-invalid={Boolean(errors.activeVendors)}
                 className={inputClassName}
@@ -453,13 +464,13 @@ export function PilotForm({ campaign }: PilotFormProps) {
                       locale,
                       campaign_segment: campaign.segment,
                       page_path: pathname,
-                      value: event.target.value
+                      value: event.target.value,
                     });
-                  }
+                  },
                 })}
                 aria-describedby={fieldDescription(
                   "currentProcess",
-                  errors.currentProcess
+                  errors.currentProcess,
                 )}
                 aria-invalid={Boolean(errors.currentProcess)}
                 className={inputClassName}
@@ -483,7 +494,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
                 {...register("monthlyFollowUps")}
                 aria-describedby={fieldDescription(
                   "monthlyFollowUps",
-                  errors.monthlyFollowUps
+                  errors.monthlyFollowUps,
                 )}
                 aria-invalid={Boolean(errors.monthlyFollowUps)}
                 className={inputClassName}
@@ -506,7 +517,10 @@ export function PilotForm({ campaign }: PilotFormProps) {
             >
               <textarea
                 {...register("biggestPain")}
-                aria-describedby={fieldDescription("biggestPain", errors.biggestPain)}
+                aria-describedby={fieldDescription(
+                  "biggestPain",
+                  errors.biggestPain,
+                )}
                 aria-invalid={Boolean(errors.biggestPain)}
                 className={`${inputClassName} min-h-[88px] resize-y py-2.5`}
                 id="biggestPain"
@@ -529,21 +543,24 @@ export function PilotForm({ campaign }: PilotFormProps) {
             </div>
 
             <div className="sm:col-span-2">
-              <label className="flex items-start gap-2.5 text-sm leading-5 text-foreground-muted">
+              <label className="text-foreground-muted flex items-start gap-2.5 text-sm leading-5">
                 <input
                   {...register("privacyConsent")}
                   aria-describedby={fieldDescription(
                     "privacyConsent",
-                    errors.privacyConsent
+                    errors.privacyConsent,
                   )}
                   aria-invalid={Boolean(errors.privacyConsent)}
-                  className="focus-ring mt-0.5 size-4 rounded border-input"
+                  className="focus-ring border-input mt-0.5 size-4 rounded"
                   suppressHydrationWarning
                   type="checkbox"
                 />
                 <span>{t("fields.privacyConsent.label")}</span>
               </label>
-              <FieldErrorMessage error={errors.privacyConsent} name="privacyConsent" />
+              <FieldErrorMessage
+                error={errors.privacyConsent}
+                name="privacyConsent"
+              />
             </div>
 
             <input type="hidden" {...register("campaignSegment")} />
@@ -552,7 +569,7 @@ export function PilotForm({ campaign }: PilotFormProps) {
             {submitError ? (
               <p
                 aria-live="assertive"
-                className="rounded-md border border-destructive/25 bg-surface px-3 py-2.5 text-sm font-semibold text-destructive sm:col-span-2"
+                className="border-destructive/25 bg-surface text-destructive rounded-md border px-3 py-2.5 text-sm font-semibold sm:col-span-2"
                 role="alert"
               >
                 {submitError}
@@ -566,15 +583,15 @@ export function PilotForm({ campaign }: PilotFormProps) {
               size="lg"
               type="submit"
             >
-              {isSubmitting ? <Loader2 aria-hidden="true" className="animate-spin" /> : null}
+              {isSubmitting ? (
+                <Loader2 aria-hidden="true" className="animate-spin" />
+              ) : null}
               {t("submit")}
             </Button>
 
-            <p className="text-xs leading-5 text-foreground-muted sm:col-span-2">
+            <p className="text-foreground-muted text-xs leading-5 sm:col-span-2">
               {t("privacyPrefix")}{" "}
-              <PrivacyRouteLink
-                className="focus-ring rounded-sm font-semibold text-primary underline-offset-4 hover:underline"
-              >
+              <PrivacyRouteLink className="focus-ring text-primary rounded-sm font-semibold underline-offset-4 hover:underline">
                 {t("privacyLink")}
               </PrivacyRouteLink>
               .
@@ -592,7 +609,7 @@ function PilotSuccess() {
   useEffect(() => {
     document.getElementById("pilot-form")?.scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "start",
     });
   }, []);
 
@@ -600,25 +617,25 @@ function PilotSuccess() {
     <section
       aria-labelledby="pilot-form-heading"
       aria-live="polite"
-      className="scroll-mt-28 bg-surface py-12 md:py-16"
+      className="bg-surface scroll-mt-28 py-12 md:py-16"
       id="pilot-form"
       role="status"
     >
       <Container className="max-w-[54rem]">
-        <div className="rounded-lg border border-primary/20 bg-primary-subtle p-5 shadow-card md:p-7">
-          <p className="text-xs font-semibold tracking-[0.08em] text-primary uppercase">
+        <div className="border-primary/20 bg-primary-subtle shadow-card rounded-lg border p-5 md:p-7">
+          <p className="text-primary text-xs font-semibold tracking-[0.08em] uppercase">
             {t("eyebrow")}
           </p>
           <h2
-            className="mt-3 text-2xl leading-tight font-semibold text-foreground md:text-4xl"
+            className="text-foreground mt-3 text-2xl leading-tight font-semibold md:text-4xl"
             id="pilot-form-heading"
           >
             {t("title")}
           </h2>
-          <p className="mt-3 max-w-[62ch] text-sm leading-6 text-foreground-muted md:text-base md:leading-7">
+          <p className="text-foreground-muted mt-3 max-w-[62ch] text-sm leading-6 md:text-base md:leading-7">
             {t("copy")}
           </p>
-          <p className="mt-4 max-w-[62ch] rounded-md border border-primary/15 bg-surface/72 px-4 py-3 text-sm leading-6 text-foreground md:text-base md:leading-7">
+          <p className="border-primary/15 bg-surface/72 text-foreground mt-4 max-w-[62ch] rounded-md border px-4 py-3 text-sm leading-6 md:text-base md:leading-7">
             {t("note")}
           </p>
         </div>
@@ -632,7 +649,7 @@ function FormField({
   className,
   error,
   label,
-  name
+  name,
 }: {
   children: ReactNode;
   className?: string;
@@ -642,7 +659,7 @@ function FormField({
 }) {
   return (
     <div className={`grid gap-1.5 ${className ?? ""}`}>
-      <label className="text-sm font-semibold text-foreground" htmlFor={name}>
+      <label className="text-foreground text-sm font-semibold" htmlFor={name}>
         {label}
       </label>
       {children}
@@ -653,7 +670,7 @@ function FormField({
 
 function FieldErrorMessage({
   error,
-  name
+  name,
 }: {
   error?: FieldError;
   name: string;
@@ -663,7 +680,7 @@ function FieldErrorMessage({
   }
 
   return (
-    <p className="text-xs font-semibold text-destructive" id={`${name}-error`}>
+    <p className="text-destructive text-xs font-semibold" id={`${name}-error`}>
       {error.message}
     </p>
   );
@@ -691,11 +708,7 @@ function createLeadFormSchema(messages: {
       .min(1, messages.required)
       .email(messages.email)
       .max(254, messages.email),
-    company: z
-      .string()
-      .trim()
-      .min(2, messages.min2)
-      .max(120, messages.max120),
+    company: z.string().trim().min(2, messages.min2).max(120, messages.max120),
     role: z.string().trim().max(100, messages.max100).optional(),
     companyType: z.enum(companyTypeOptions),
     activeVendors: z.enum(activeVendorOptions),
@@ -705,9 +718,9 @@ function createLeadFormSchema(messages: {
     privacyConsent: z.boolean().refine(Boolean, messages.consent),
     campaignSegment: z.enum(["property-management", "contractors"]),
     locale: z.enum(["en", "pl"]),
-    honeypot: z.string().max(0).optional()
+    honeypot: z.string().max(0).optional(),
   });
 }
 
 const inputClassName =
-  "focus-ring h-11 w-full rounded-md border border-input bg-surface px-3 text-sm text-foreground";
+  "focus-ring h-11 w-full rounded-md border border-input bg-surface px-3 text-sm text-foreground transition-[border-color,background-color,box-shadow] duration-200 placeholder:text-foreground-muted/65 hover:border-primary/45 disabled:cursor-not-allowed disabled:bg-surface-muted motion-reduce:transition-none";

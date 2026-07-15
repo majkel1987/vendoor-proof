@@ -3,7 +3,10 @@
 import { type ReactNode } from "react";
 
 import { Button, type ButtonProps } from "@/components/ui/button";
-import { analyticsEvents, type AnalyticsEventName } from "@/config/analytics-events";
+import {
+  analyticsEvents,
+  type AnalyticsEventName,
+} from "@/config/analytics-events";
 import { trackEvent } from "@/lib/analytics";
 import { usePathname } from "@/i18n/navigation";
 import type { CampaignSegment } from "@/types/landing";
@@ -31,7 +34,7 @@ export function TrackedAnchor({
   segment,
   size = "lg",
   variant = "default",
-  onTrackedClick
+  onTrackedClick,
 }: TrackedAnchorProps) {
   const pathname = usePathname();
 
@@ -46,7 +49,7 @@ export function TrackedAnchor({
             campaign_segment: segment,
             page_path: pathname,
             event_source: eventSource,
-            target: href
+            target: href,
           });
           scrollToTarget(href);
           onTrackedClick?.();
@@ -63,13 +66,13 @@ export function trackNavAnchor(
   locale: string,
   segment: CampaignSegment,
   pathname: string,
-  onComplete?: () => void
+  onComplete?: () => void,
 ) {
   trackEvent(analyticsEvents.navAnchorClicked, {
     locale,
     campaign_segment: segment,
     page_path: pathname,
-    anchor: href
+    anchor: href,
   });
   scrollToTarget(href);
   onComplete?.();
@@ -85,35 +88,32 @@ function scrollToTarget(href: `#${string}`) {
   }
 
   const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
+    "(prefers-reduced-motion: reduce)",
   ).matches;
 
   target.scrollIntoView({
     behavior: prefersReducedMotion ? "auto" : "smooth",
-    block: "start"
+    block: "start",
   });
 
   const focusTarget =
+    target.querySelector<HTMLElement>("[data-anchor-focus]") ??
     target.querySelector<HTMLElement>(
-      "input, select, textarea, button, a[href], [tabindex]:not([tabindex='-1'])"
-    ) ?? target;
+      "input, select, textarea, button, a[href], [tabindex]:not([tabindex='-1'])",
+    ) ??
+    target;
 
   const hadTabIndex = focusTarget.hasAttribute("tabindex");
   if (!hadTabIndex) {
     focusTarget.setAttribute("tabindex", "-1");
   }
 
-  window.setTimeout(
-    () => {
-      focusTarget.focus({ preventScroll: true });
-      if (!hadTabIndex) {
-        focusTarget.addEventListener(
-          "blur",
-          () => focusTarget.removeAttribute("tabindex"),
-          { once: true }
-        );
-      }
-    },
-    prefersReducedMotion ? 0 : 420
-  );
+  focusTarget.focus({ preventScroll: true });
+  if (!hadTabIndex) {
+    focusTarget.addEventListener(
+      "blur",
+      () => focusTarget.removeAttribute("tabindex"),
+      { once: true },
+    );
+  }
 }

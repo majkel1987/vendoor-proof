@@ -100,11 +100,8 @@ for (const terms of [
 }
 
 test("Terms modal fits a 375px viewport at 200% zoom", async ({ page }) => {
-  await page.setViewportSize({ width: 375, height: 812 });
+  await page.setViewportSize({ width: 188, height: 406 });
   await page.goto("/property-management");
-  await page.evaluate(() => {
-    document.documentElement.style.zoom = "2";
-  });
   await page
     .getByRole("contentinfo")
     .getByRole("link", { name: "Terms", exact: true })
@@ -115,5 +112,5 @@ test("Terms modal fits a 375px viewport at 200% zoom", async ({ page }) => {
     .boundingBox();
   expect(box).not.toBeNull();
   expect(box!.x).toBeGreaterThanOrEqual(0);
-  expect(box!.x + box!.width).toBeLessThanOrEqual(375);
+  expect(box!.x + box!.width).toBeLessThanOrEqual(188);
 });

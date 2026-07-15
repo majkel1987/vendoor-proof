@@ -120,6 +120,7 @@
       "verificationRule": "Submitted or received does not mean verified."
     },
     "trustPrinciples": {
+      "heading": "How VendoorProof keeps your team in control",
       "approvedAutomation": {
         "title": "Controlled automation",
         "copy": "Messages will be delivered exactly according to the schedule and templates approved by your team."
@@ -414,9 +415,9 @@
     "productPreview": {
       "eyebrow": "Automated document collection",
       "title": "Stop chasing vendors for documents.",
-      "lead": "VendorProof sends requests, follows up automatically and routes only unresolved exceptions to your team.",
-      "principle": "Your team makes the decisions. VendorProof handles the follow-up.",
-      "primaryCta": "Join the waitlist",
+      "lead": "VendoorProof sends requests, follows up automatically and routes only unresolved exceptions to your team.",
+      "principle": "Your team makes the decisions. VendoorProof handles the follow-up.",
+      "primaryCta": "Join early access",
       "secondaryCta": "See how it works",
       "imageAlt": "Vendor document workflow showing automated request, secure file collection, manual verification and exception escalation.",
       "workflowAriaLabel": "Vendor document workflow",
@@ -557,7 +558,7 @@
       "lead": "Clear answers on automation scope, vendor access, and how pilots usually start.",
       "topicCount": "{count} topics covered",
       "contactPrompt": "Need a walkthrough for your workflow?",
-      "contactLink": "Apply for an automation pilot",
+      "contactLink": "Join early access",
       "items": {
         "emails": {
           "question": "Will the app send emails to vendors automatically?",
@@ -690,8 +691,8 @@
       "metaDescription": "A vendor document workflow for property teams that automates approved follow-ups while keeping final compliance review with your team.",
       "hero": {
         "eyebrow": "Document reminder automation",
-        "title": "Track expiring vendor documents without manually sending out every single reminder.",
-        "lead": "Join our early access list. We will notify you as soon as we onboard more property management teams. We will show you how to streamline reminders, renewals and document verification in one seamless workflow.",
+        "title": "Track expiring vendor documents without chasing every reminder.",
+        "lead": "Bring reminders, renewals and document review into one controlled workflow—without another spreadsheet.",
         "context": "Built for small property teams still managing vendor compliance in spreadsheets, inboxes, and last-minute reminders.",
         "primaryCta": "Join early access",
         "secondaryCta": "See how it works",
@@ -709,10 +710,10 @@
       "metaDescription": "A lightweight vendor document workflow for contractors that keeps COIs, licenses, and subcontractor documents moving before work is blocked.",
       "hero": {
         "eyebrow": "Vendor document follow-up automation",
-        "title": "Automate vendor-document follow-ups before expired paperwork blocks work.",
+        "title": "Automate vendor document follow-ups before expired paperwork blocks work.",
         "lead": "Keep COIs, licenses, and subcontractor documents moving without manually sending every reminder.",
         "context": "A lightweight workflow for contractors who need to see what is missing, what is in review, and what can block mobilization.",
-        "primaryCta": "Request a pilot",
+        "primaryCta": "Join early access",
         "secondaryCta": "See the workflow",
         "microcopy": "No vendor logins. Submission never equals approval.",
         "trustLine": "Approved automation · No vendor logins · Human review",

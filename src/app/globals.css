@@ -52,9 +52,15 @@
 
 :root {
   --container-max: 76rem;
+  --container-wide: 84rem;
   --gutter-mobile: 1.25rem;
   --gutter-tablet: 2rem;
   --gutter-desktop: 3rem;
+  --section-space: clamp(4rem, 7vw, 7rem);
+  --text-display: clamp(2.65rem, 5.6vw, 5.25rem);
+  --text-section: clamp(2.25rem, 4vw, 4rem);
+  --text-section-compact: clamp(2rem, 3.4vw, 3.25rem);
+  --text-lead: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
 }
 
 * {
@@ -72,6 +78,46 @@ body {
   color: var(--color-foreground);
   font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   text-rendering: optimizeLegibility;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.section-shell {
+  padding-block: var(--section-space);
+}
+
+.type-display {
+  font-size: var(--text-display);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.type-section {
+  font-size: var(--text-section);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.type-section-compact {
+  font-size: var(--text-section-compact);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.type-lead {
+  max-width: 62ch;
+  font-size: var(--text-lead);
+  line-height: 1.75;
+  text-wrap: pretty;
 }
 
 ::selection {
@@ -192,26 +238,7 @@ body {
   outline-offset: 2px;
 }
 
-.workflow-status-pulse {
-  animation: workflow-status-pulse 2.8s ease-in-out infinite;
-}
-
-@keyframes workflow-status-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgb(18 132 132 / 0);
-  }
-
-  45% {
-    box-shadow: 0 0 0 4px rgb(18 132 132 / 0.14);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .workflow-status-pulse {
-    animation: none;
-  }
-
   .hero-scroll-cue,
   .hero-scroll-cue::before,
   .hero-scroll-cue svg {

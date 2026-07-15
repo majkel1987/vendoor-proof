@@ -17,15 +17,18 @@ export async function TrustPrinciples() {
 
   return (
     <section
+      aria-labelledby="trust-heading"
       className="border-border bg-surface scroll-mt-24 border-b py-12 md:py-16"
       id="trust"
     >
-      <Container className="max-w-[82rem]">
+      <Container className="max-w-[var(--container-wide)]">
+        <h2 className="sr-only" id="trust-heading">
+          {t("heading")}
+        </h2>
         <div className="grid items-stretch gap-4 md:grid-cols-3 md:gap-5 lg:gap-6">
-          {principles.map((principle, index) => (
+          {principles.map((principle) => (
             <TrustPrinciple
               copy={t(`${principle.key}.copy`)}
-              delay={index * 0.05}
               icon={principle.icon}
               key={principle.key}
               title={t(`${principle.key}.title`)}
@@ -39,19 +42,13 @@ export async function TrustPrinciples() {
 
 type TrustPrincipleProps = {
   copy: string;
-  delay: number;
   icon: ComponentType<SVGProps<SVGSVGElement>>;
   title: string;
 };
 
-function TrustPrinciple({
-  copy,
-  delay,
-  icon: Icon,
-  title,
-}: TrustPrincipleProps) {
+function TrustPrinciple({ copy, icon: Icon, title }: TrustPrincipleProps) {
   return (
-    <ScrollRevealDiv className="h-full" delay={delay}>
+    <ScrollRevealDiv className="h-full">
       <GlowingShadow>
         <div className="border-primary/12 bg-background group-hover/glow:border-primary/25 relative h-full overflow-hidden rounded-xl border p-6 shadow-[0_18px_45px_rgb(15_83_79/0.06)] transition-[border-color,box-shadow] duration-[350ms] ease-out group-hover/glow:shadow-[0_22px_55px_rgb(15_83_79/0.1)] motion-reduce:transition-none md:min-h-[13.5rem] md:p-7">
           <div
@@ -62,9 +59,9 @@ function TrustPrinciple({
             <Icon aria-hidden="true" className="size-6" />
           </div>
           <div className="relative mt-6">
-            <h2 className="text-foreground max-w-[17rem] text-lg leading-6 font-semibold">
+            <h3 className="text-foreground max-w-[17rem] text-lg leading-6 font-semibold">
               {title}
-            </h2>
+            </h3>
             <p className="text-foreground-muted mt-2.5 max-w-[22rem] text-[0.9375rem] leading-6">
               {copy}
             </p>

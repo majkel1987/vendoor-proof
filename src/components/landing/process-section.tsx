@@ -29,7 +29,7 @@ export async function ProcessSection() {
   return (
     <section
       aria-labelledby="workflow-heading"
-      className="border-border bg-surface scroll-mt-28 border-b py-14 md:py-20"
+      className="section-shell border-border bg-surface scroll-mt-28 border-b"
       id="workflow"
     >
       <Container>
@@ -51,6 +51,7 @@ export async function ProcessSection() {
               height={914}
               sizes="(min-width: 1280px) 1216px, 100vw"
               src="/illustrations/Image 11 lip 2026, 19_52_37.png"
+              unoptimized
               width={1716}
             />
           </div>

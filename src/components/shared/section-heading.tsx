@@ -13,18 +13,16 @@ export function SectionHeading({
   eyebrow,
   title,
   lead,
-  className
+  className,
 }: SectionHeadingProps) {
   return (
     <div className={cn("max-w-3xl", className)}>
       {eyebrow}
-      <h2 className="mt-4 text-3xl leading-[1.08] font-semibold tracking-[-0.01em] text-foreground md:text-5xl">
+      <h2 className="type-section-compact text-foreground mt-4 font-semibold">
         {title}
       </h2>
       {lead ? (
-        <p className="mt-5 max-w-[62ch] text-lg leading-8 text-foreground-muted">
-          {lead}
-        </p>
+        <p className="type-lead text-foreground-muted mt-5">{lead}</p>
       ) : null}
     </div>
   );

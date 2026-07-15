@@ -58,7 +58,7 @@ export async function ProductPreview({ segment }: ProductPreviewProps) {
   return (
     <section
       aria-labelledby="operational-visibility-heading"
-      className="border-border bg-surface overflow-hidden border-b py-16 md:py-20 lg:py-24"
+      className="section-shell border-border bg-surface overflow-hidden border-b"
     >
       <Container className="max-w-[77.5rem]">
         <div className="grid gap-y-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(0,1fr)] lg:items-center lg:gap-14 xl:gap-20">
@@ -68,17 +68,17 @@ export async function ProductPreview({ segment }: ProductPreviewProps) {
                 {t("eyebrow")}
               </p>
               <h2
-                className="text-foreground mt-4 text-[clamp(2.35rem,4vw,3.35rem)] leading-[1.02] font-semibold tracking-[-0.03em] text-balance"
+                className="type-section-compact text-foreground mt-4 font-semibold"
                 id="operational-visibility-heading"
               >
                 {t("title")}
               </h2>
-              <p className="text-foreground-muted mt-5 max-w-[34rem] text-lg leading-8 text-pretty">
+              <p className="type-lead text-foreground-muted mt-5 max-w-[34rem]">
                 {t("lead")}
               </p>
             </ScrollRevealDiv>
 
-            <ScrollRevealDiv className="order-4 lg:mt-7" delay={0.05}>
+            <ScrollRevealDiv className="order-4 lg:mt-7">
               <ul className="grid gap-4">
                 {benefitKeys.map(({ Icon, key }) => (
                   <li className="flex gap-4" key={key}>
@@ -98,16 +98,13 @@ export async function ProductPreview({ segment }: ProductPreviewProps) {
               </ul>
             </ScrollRevealDiv>
 
-            <ScrollRevealDiv className="order-5 lg:mt-7" delay={0.08}>
+            <ScrollRevealDiv className="order-5 lg:mt-7">
               <p className="border-primary/20 bg-primary-subtle/70 text-foreground rounded-lg border px-4 py-3 text-sm leading-6 font-semibold">
                 {t("principle")}
               </p>
             </ScrollRevealDiv>
 
-            <ScrollRevealDiv
-              className="order-2 flex flex-col gap-3 sm:flex-row lg:mt-7 lg:flex-col xl:flex-row"
-              delay={0.11}
-            >
+            <ScrollRevealDiv className="order-2 flex flex-col gap-3 sm:flex-row lg:mt-7 lg:flex-col xl:flex-row">
               <TrackedAnchor
                 className="group w-full sm:w-auto"
                 eventName={analyticsEvents.workflowCtaClicked}
@@ -137,10 +134,7 @@ export async function ProductPreview({ segment }: ProductPreviewProps) {
             </ScrollRevealDiv>
           </div>
 
-          <ScrollRevealDiv
-            className="order-3 min-w-0 lg:order-none"
-            delay={0.08}
-          >
+          <ScrollRevealDiv className="order-3 min-w-0 lg:order-none">
             <ProductWorkflowPanel
               imageAlt={t("imageAlt")}
               steps={workflowSteps}

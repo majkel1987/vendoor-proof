@@ -11,34 +11,31 @@ export async function ProblemSection() {
   return (
     <section
       aria-labelledby="problem-heading"
-      className="border-border bg-background relative isolate overflow-x-clip border-b py-16 md:py-24 lg:py-28"
+      className="section-shell border-border bg-background relative isolate overflow-x-clip border-b"
     >
       <div
         aria-hidden="true"
         className="absolute inset-x-0 top-0 -z-10 h-56 bg-[radial-gradient(ellipse_at_76%_0%,oklch(0.83_0.08_184_/_0.24),transparent_64%)]"
       />
 
-      <Container className="max-w-[94rem]">
+      <Container className="max-w-[var(--container-wide)]">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] lg:grid-rows-[auto_auto] lg:items-start lg:gap-x-12 lg:gap-y-7 xl:gap-x-16">
           <ScrollRevealDiv className="max-w-[36rem] lg:col-start-1 lg:row-start-1 lg:pt-5">
             <p className="text-primary text-sm leading-6 font-bold tracking-[0.1em] uppercase">
               {t("eyebrow")}
             </p>
             <h2
-              className="text-foreground mt-5 max-w-[13ch] text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[0.98] font-semibold tracking-[-0.03em] text-balance"
+              className="type-section text-foreground mt-5 max-w-[13ch] font-semibold"
               id="problem-heading"
             >
               {t("title")}
             </h2>
-            <p className="text-foreground-muted mt-7 max-w-[35rem] text-lg leading-8 text-pretty">
+            <p className="type-lead text-foreground-muted mt-7 max-w-[35rem]">
               {t("lead")}
             </p>
           </ScrollRevealDiv>
 
-          <ScrollRevealDiv
-            className="min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1"
-            delay={0.08}
-          >
+          <ScrollRevealDiv className="min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1">
             <ProblemPhotoPanel
               alt={t("photo.alt")}
               documentChecked={t("photo.documentChecked")}
@@ -47,10 +44,7 @@ export async function ProblemSection() {
             />
           </ScrollRevealDiv>
 
-          <ScrollRevealDiv
-            className="border-primary/18 bg-surface flex max-w-[36rem] items-start gap-3 rounded-lg border p-4 lg:col-start-1 lg:row-start-2"
-            delay={0.04}
-          >
+          <ScrollRevealDiv className="border-primary/18 bg-surface flex max-w-[36rem] items-start gap-3 rounded-lg border p-4 lg:col-start-1 lg:row-start-2">
             <ClipboardCheck
               aria-hidden="true"
               className="text-primary mt-0.5 size-5 shrink-0"

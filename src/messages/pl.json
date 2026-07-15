@@ -120,6 +120,7 @@
       "verificationRule": "Przesłane albo otrzymane nie znaczy zweryfikowane."
     },
     "trustPrinciples": {
+      "heading": "Jak VendoorProof pozostawia kontrolę po stronie zespołu",
       "approvedAutomation": {
         "title": "Kontrolowana automatyzacja",
         "copy": "Wiadomości mailowe trafiają do dostawców ściśle według harmonogramu i na bazie szablonów zatwierdzonych przez Twój zespół."
@@ -414,9 +415,9 @@
     "productPreview": {
       "eyebrow": "Automatyczne zbieranie dokumentów",
       "title": "Koniec z upominaniem się o dokumenty.",
-      "lead": "VendorProof wysyła prośby, automatycznie przypomina i przekazuje Twojemu zespołowi tylko nierozwiązane wyjątki.",
-      "principle": "Twój zespół podejmuje decyzje. VendorProof zajmuje się przypomnieniami.",
-      "primaryCta": "Dołącz do listy",
+      "lead": "VendoorProof wysyła prośby, automatycznie przypomina i przekazuje Twojemu zespołowi tylko nierozwiązane wyjątki.",
+      "principle": "Twój zespół podejmuje decyzje. VendoorProof zajmuje się przypomnieniami.",
+      "primaryCta": "Dołącz do wczesnego dostępu",
       "secondaryCta": "Zobacz, jak to działa",
       "imageAlt": "Obieg dokumentów dostawcy pokazujący automatyczną prośbę, bezpieczne przesłanie pliku, ręczną weryfikację i eskalację wyjątku.",
       "workflowAriaLabel": "Obieg dokumentów dostawcy",
@@ -557,7 +558,7 @@
       "lead": "Konkretne odpowiedzi o zakresie automatyzacji, dostępie dostawców i starcie pilota.",
       "topicCount": "{count} omówionych tematów",
       "contactPrompt": "Chcesz omówić swój proces?",
-      "contactLink": "Zgłoś się do pilota automatyzacji",
+      "contactLink": "Dołącz do wczesnego dostępu",
       "items": {
         "emails": {
           "question": "Czy system sam przypomina dostawcom?",
@@ -690,8 +691,8 @@
       "metaDescription": "Workflow dokumentów dostawców dla zespołów zarządzających nieruchomościami, który automatyzuje zatwierdzone follow-upy i zostawia ostateczną weryfikację zespołowi.",
       "hero": {
         "eyebrow": "Automatyzacja przypomnień o dokumentach",
-        "title": "Śledź wygasające dokumenty dostawców bez konieczności ręcznego wysyłania przypomnień.",
-        "lead": "Zapisz swoją firmę na listę wczesnego dostępu. Poinformujemy Cię, gdy zaprosimy kolejne zespoły zarządzające nieruchomościami. Pokażemy Ci, jak zautomatyzować przypomnienia, odnowienia oraz weryfikację dokumentów w jednym spójnym procesie.",
+        "title": "Śledź wygasające dokumenty dostawców bez ręcznego pilnowania każdego przypomnienia.",
+        "lead": "Połącz przypomnienia, odnowienia i weryfikację dokumentów w jeden kontrolowany proces — bez kolejnego arkusza.",
         "context": "Dla małych zespołów zarządzających nieruchomościami, które nadal ogarniają compliance dostawców w arkuszach, skrzynkach odbiorczych i przypomnieniach na ostatnią chwilę.",
         "primaryCta": "Dołącz do wczesnego dostępu",
         "secondaryCta": "Zobacz jak to działa",
@@ -710,9 +711,9 @@
       "hero": {
         "eyebrow": "Automatyzacja follow-upów dokumentów dostawców",
         "title": "Pilnuj dokumentów dostawców, zanim wygasłe papiery opóźnią prace.",
-        "lead": "Zgłoś firmę do listy wczesnego dostępu. Damy znać, gdy będziemy wpuszczać kolejne zespoły wykonawców, i pokażemy, jak śledzić odnowienia, przypomnienia i follow-upy bez kolejnego arkusza.",
+        "lead": "Połącz odnowienia, przypomnienia i weryfikację dokumentów w jeden kontrolowany proces — bez kolejnego arkusza.",
         "context": "Lekki workflow dla wykonawców, którzy muszą widzieć, czego brakuje, co jest w weryfikacji i co może zablokować mobilizację.",
-        "primaryCta": "Zgłoś firmę do wczesnego dostępu",
+        "primaryCta": "Dołącz do wczesnego dostępu",
         "secondaryCta": "Zobacz workflow",
         "microcopy": "Bez logowania dla dostawców. Przesłanie nigdy nie oznacza akceptacji.",
         "trustLine": "Zatwierdzona automatyzacja · Bez logowania · Weryfikacja przez człowieka",

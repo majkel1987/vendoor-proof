@@ -23,18 +23,18 @@ const faqItems = [
   "vendorAccount",
   "noResponse",
   "otherDocuments",
-  "startSmall"
+  "startSmall",
 ] as const;
 
 export function FaqSection({ segment }: FaqSectionProps) {
   const t = useTranslations("landing.faq");
   const locale = useLocale();
   const pathname = usePathname();
-  const [openItem, setOpenItem] = useState("faq-emails");
+  const [openItem, setOpenItem] = useState("");
   const items = faqItems.map((item) => ({
     id: `faq-${item}`,
     trigger: t(`items.${item}.question`),
-    content: t(`items.${item}.answer`)
+    content: t(`items.${item}.answer`),
   }));
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -44,15 +44,15 @@ export function FaqSection({ segment }: FaqSectionProps) {
       name: item.trigger,
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.content
-      }
-    }))
+        text: item.content,
+      },
+    })),
   };
 
   return (
     <section
       aria-labelledby="faq-heading"
-      className="border-border bg-background relative isolate overflow-x-clip border-b py-16 md:py-24"
+      className="section-shell border-border bg-background relative isolate overflow-x-clip border-b"
       id="faq"
     >
       <div
@@ -69,17 +69,17 @@ export function FaqSection({ segment }: FaqSectionProps) {
             </div>
 
             <h2
-              className="font-display text-foreground mt-6 max-w-[14ch] text-[clamp(2rem,3.6vw,3.5rem)] leading-[1.02] font-semibold tracking-[-0.02em] text-balance"
+              className="type-section-compact font-display text-foreground mt-6 max-w-[14ch] font-semibold"
               id="faq-heading"
             >
               {t("title")}
             </h2>
 
-            <p className="text-foreground-muted mt-5 max-w-[34ch] text-lg leading-8 text-pretty">
+            <p className="type-lead text-foreground-muted mt-5 max-w-[34ch]">
               {t("lead")}
             </p>
 
-            <div className="border-border bg-surface mt-8 max-w-md rounded-xl border p-5 shadow-card">
+            <div className="border-border bg-surface shadow-card mt-8 max-w-md rounded-xl border p-5">
               <p className="text-foreground text-sm leading-6 font-semibold">
                 {t("contactPrompt")}
               </p>
@@ -111,7 +111,7 @@ export function FaqSection({ segment }: FaqSectionProps) {
                   locale,
                   campaign_segment: segment,
                   page_path: pathname,
-                  faq_item: itemId
+                  faq_item: itemId,
                 });
               }}
               openItem={openItem}

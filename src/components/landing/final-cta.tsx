@@ -18,21 +18,21 @@ export async function FinalCta({ campaign }: FinalCtaProps) {
   return (
     <section
       aria-labelledby="final-cta-heading"
-      className="bg-foreground py-16 text-background md:py-24"
+      className="section-shell bg-foreground text-background"
     >
       <Container>
         <ScrollRevealDiv className="max-w-[58rem]">
           <h2
-            className="text-3xl leading-[1.08] font-semibold md:text-5xl"
+            className="type-section-compact font-semibold"
             id="final-cta-heading"
           >
             {t("title")}
           </h2>
-          <p className="mt-5 max-w-[62ch] text-base leading-7 text-background/78 md:text-lg md:leading-8">
+          <p className="text-background/78 mt-5 max-w-[62ch] text-base leading-7 md:text-lg md:leading-8">
             {t("copy")}
           </p>
           <TrackedAnchor
-            className="mt-8 bg-background text-foreground hover:bg-background/90"
+            className="bg-background text-foreground hover:bg-background/90 mt-8"
             eventName={analyticsEvents.pilotCtaClicked}
             eventSource="final_cta"
             href="#pilot-form"

@@ -34,18 +34,18 @@ export async function HeroSection({ campaign }: HeroSectionProps) {
         className="hero-grain pointer-events-none absolute inset-0"
       />
 
-      <Container className="relative z-10 max-w-[84rem] pt-28 pb-14 md:pt-32 md:pb-16 lg:pt-32">
-        <div className="mx-auto grid max-w-[84rem] justify-items-center text-center">
+      <Container className="relative z-10 max-w-[var(--container-wide)] pt-28 pb-14 md:pt-32 md:pb-16 lg:pt-32">
+        <div className="mx-auto grid max-w-[var(--container-wide)] justify-items-center text-center">
           <ScrollRevealDiv className="grid justify-items-center">
             <p className="hero-kicker inline-flex items-center rounded-full border px-4 py-2 text-xs font-bold tracking-[0.1em] uppercase backdrop-blur-xl">
               {campaignT("hero.eyebrow")}
             </p>
 
-            <h1 className="font-display mt-6 max-w-[68rem] text-[clamp(2.85rem,6.1vw,5.6rem)] leading-[0.95] font-semibold tracking-[-0.035em] text-balance text-white">
+            <h1 className="type-display font-display mt-6 max-w-[64rem] font-semibold text-white">
               {campaignT("hero.title")}
             </h1>
 
-            <p className="mt-6 max-w-[45rem] text-lg leading-8 text-white/76 md:text-xl md:leading-9">
+            <p className="type-lead mt-6 max-w-[44rem] text-white/78">
               {campaignT("hero.lead")}
             </p>
 
@@ -97,14 +97,11 @@ export async function HeroSection({ campaign }: HeroSectionProps) {
             </div>
           </ScrollRevealDiv>
 
-          <ScrollRevealDiv
-            className="relative mt-14 mb-8 w-[min(84rem,calc(100vw-2rem))] justify-self-center opacity-[0.97] md:mt-16 md:mb-10 lg:mt-20"
-            delay={0.08}
-          >
+          <ScrollRevealDiv className="relative mt-14 mb-8 w-[min(84rem,calc(100vw-2rem))] justify-self-center opacity-[0.97] md:mt-16 md:mb-10 lg:mt-20">
             <HeroWorkflowPreview />
           </ScrollRevealDiv>
 
-          <ScrollRevealDiv className="mt-14 md:mt-16" delay={0.14}>
+          <ScrollRevealDiv className="mt-14 md:mt-16">
             <TrackedAnchor
               className="hero-scroll-cue size-14 rounded-full p-0 text-white"
               eventName={analyticsEvents.navAnchorClicked}
@@ -124,4 +121,3 @@ export async function HeroSection({ campaign }: HeroSectionProps) {
     </section>
   );
 }
-
