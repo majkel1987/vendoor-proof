@@ -49,7 +49,7 @@ export function SegmentSideRail({
         setOnDarkSurface(entry.isIntersecting);
       },
       {
-        rootMargin: "-4rem 0px 0px 0px",
+        rootMargin: "-64px 0px 0px 0px",
         threshold: 0,
       },
     );
